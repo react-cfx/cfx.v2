@@ -1,0 +1,15 @@
+{
+  "lerna": "3.18.4",
+  "command": {
+    "bootstrap": {
+      "npmClient": "yarn",
+      "loglevel": "info",
+      "registry": "https://registry.npm.taobao.org",
+      "ignore": []
+    }
+  },
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.2.0"
+}

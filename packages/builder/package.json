@@ -1,0 +1,24 @@
+{
+  "name": "cfx.builder",
+  "version": "0.2.0",
+  "author": ":FooTearth <footearth@gmail.com>",
+  "bin": {
+    "cfxbuilder": "./bin/cfxbuilder.js"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "autod": "^3.1.0",
+    "coffeescript": "^2.4.1",
+    "ddeyes": "^0.2.24",
+    "shelljs": "^0.8.3"
+  },
+  "dependencies": {
+    "cfx.require-plugin-coffee": "~0.2.24",
+    "cfx.styl": "^0.0.0",
+    "ddeyes": "~0.2.24",
+    "deepmerge": "~4.2.2",
+    "fs-extra": "~8.1.0",
+    "is-plain-object": "~3.0.0",
+    "klaw-sync": "~6.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "cfx.styl",
+  "version": "0.2.0",
+  "dependencies-comment": {
+    "css": "^2.2.4"
+  },
+  "dependencies": {
+    "ddeyes": "^0.2.24",
+    "object-hash": "^2.0.0"
+  },
+  "devDependencies": {
+    "cfx.require-plugin-coffee": "^0.2.24",
+    "coffeescript": "^2.4.1",
+    "shelljs": "^0.8.3"
+  }
+}
