@@ -4,7 +4,7 @@ import {
   last
   arrNo
   slice
-} from '../../source/util'
+} from '../../src/util'
 
 target.all = =>
   dd 'Hello World!!!'

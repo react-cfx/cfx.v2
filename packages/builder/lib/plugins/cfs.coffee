@@ -3,20 +3,16 @@ import dd from 'ddeyes'
 import {
   createRenderer
   renderToString
-} from 'cfx.styl/source'
-
-import selectorNamePlugin from 'cfx.styl/source/plugins/selectorName'
-import classNamesPlugin from 'cfx.styl/source/plugins/classNames'
-import ruleKPlugin from 'cfx.styl/source/plugins/ruleK'
-import haskClassKey from 'cfx.styl/source/plugins/hashClassKey'
+  plugins as cfsPlugins
+} from 'cfx.styl'
 
 cfs = (styles) =>
 
   plugins = [
-    selectorNamePlugin()
-    classNamesPlugin()
-    ruleKPlugin()
-    haskClassKey()
+    cfsPlugins.selectorName()
+    cfsPlugins.classNames()
+    cfsPlugins.ruleK()
+    cfsPlugins.haskClassKey()
   ]
 
   render = createRenderer {

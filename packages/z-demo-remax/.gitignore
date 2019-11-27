@@ -16,8 +16,12 @@ dist
 .tmp
 tmp
 
+test/**/*.js
+
 package-lock.json
 
 yarn.lock
 yarn*.log
 .lock
+
+/src

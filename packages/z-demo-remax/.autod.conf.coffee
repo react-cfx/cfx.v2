@@ -6,21 +6,30 @@ export default
   plugin: ''
   test: []
   dep: [
-    'cfx.require-plugin-coffee'
     'ddeyes'
+    'cfx.require-plugin-coffee'
 
-    'deepmerge'
-    'fs-extra'
-    'is-plain-object'
-    'klaw-sync'
+    'clsx'
+    'color'
+    'color-blend'
+    'css'
+    'react'
+    'remax'
+    'rimraf'
   ]
   devdep: [
     'autod'
+    'cfx.require-plugin-coffee'
     'coffeescript'
     'shelljs'
+    'replace'
+
+    'remax-cli'
   ]
   keep: [
+    'cfx.dom'
     'cfx.styl'
+    'cfx.builder'
   ]
   exclude: [
     './node_modules'

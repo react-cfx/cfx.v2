@@ -7,16 +7,20 @@ export default
   test: []
   dep: [
     'ddeyes'
+    'object-hash'
   ]
   devdep: [
     'autod'
-    'cfx.builder'
+    'rimraf'
+
     'cfx.require-plugin-coffee'
     'coffeescript'
     'shelljs'
+
+    'gulp'
+    'cfx.rollup-plugin-coffee2'
   ]
   exclude: [
-    './packages'
     './node_modules'
     './.autod.conf.js'
   ]

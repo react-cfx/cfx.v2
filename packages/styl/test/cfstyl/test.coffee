@@ -7,16 +7,16 @@ target.all = =>
 import {
   createRenderer
   renderToString
-} from '../../source'
+} from '../../src'
 import {
   camlToSlash
   ccs
-} from '../../source/classKey'
+} from '../../src/classKey'
 
-import selectorNamePlugin from '../../source/plugins/selectorName'
-import classNamesPlugin from '../../source/plugins/classNames'
-import ruleKPlugin from '../../source/plugins/ruleK'
-import hashClassKey from '../../source/plugins/hashClassKey'
+import selectorNamePlugin from '../../src/plugins/selectorName'
+import classNamesPlugin from '../../src/plugins/classNames'
+import ruleKPlugin from '../../src/plugins/ruleK'
+import hashClassKey from '../../src/plugins/hashClassKey'
 
 target.render = =>
 

@@ -6,21 +6,15 @@ export default
   plugin: ''
   test: []
   dep: [
-    'cfx.require-plugin-coffee'
     'ddeyes'
-
-    'deepmerge'
-    'fs-extra'
-    'is-plain-object'
-    'klaw-sync'
+    'cfx.require-plugin-coffee'
   ]
   devdep: [
     'autod'
-    'coffeescript'
-    'shelljs'
-  ]
-  keep: [
-    'cfx.styl'
+    'rimraf'
+
+    'gulp'
+    'cfx.rollup-plugin-coffee2'
   ]
   exclude: [
     './node_modules'

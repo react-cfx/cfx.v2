@@ -13,7 +13,7 @@ import {
   slashToCamel
   camelToSlash
   classKey
-} from '../../source/classKey'
+} from '../../src/classKey'
 
 target.cs = =>
 
