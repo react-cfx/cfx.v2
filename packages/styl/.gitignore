@@ -12,6 +12,5 @@ trash
 /**/build
 
 /.cache
-/src
 
 yarn*
