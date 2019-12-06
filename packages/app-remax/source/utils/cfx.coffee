@@ -1,10 +1,12 @@
-import * as React from 'react'
+import { createFactory } from 'react'
 import cfxifys, { cfxify as cfy } from 'cfx.dom'
 
-cfxify = cfy React.createFactory
+cfxify = cfy {
+  createFactory
+}
 
 export {
   cfxify
 }
 
-export default cfxifys cfy cfxify
+export default cfxifys cfxify

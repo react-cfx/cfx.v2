@@ -6,7 +6,7 @@ cfxify = (createFactoryOrElement) =>
 
   switch key
     when 'createFactory'
-    then (e) => createFactoryOrElement e
+    then (e) => value e
     when 'createElement'
     then(
       (e) => (args...) =>

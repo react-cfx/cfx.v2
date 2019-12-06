@@ -1,6 +1,9 @@
 px = (n) => "#{n}px"
+rpx = (n) => "#{n}rpx"
 vh = (n) => "#{n}vh"
 per = (n) => "#{n}%"
+
+color = (n) => "##{n}"
 
 makeArray = (a) =>
   unless Array.isArray a
@@ -19,7 +22,8 @@ join = (a, beJoin) =>
 joinS = (a) => join a, ' '
 joinP = (a) => join a, ', '
 
-func = (funcName, funcBody) => "#{funcName}(#{funcBody})"
+func = (funcName, funcBody) =>
+  "#{funcName}(#{funcBody})"
 fujp = (funcName, a) =>
   func funcName
   ,
@@ -43,8 +47,12 @@ calc = (a) =>
 
 export {
   px
+  rpx
   vh
+
   per
+
+  color
 
   joinS
   joinP
