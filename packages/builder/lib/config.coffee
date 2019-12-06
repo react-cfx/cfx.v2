@@ -1,3 +1,4 @@
+import dd from 'ddeyes'
 import { cwd } from 'process'
 import {
   join
@@ -131,6 +132,7 @@ excludesList = (conf) =>
   else conf.excludes
 
 isExcluded = ({file, dir}, excludes) =>
+  dd 1
   excludes.reduce (r, c) =>
     return r unless (typeof c) is 'string'
     return r if r is true
@@ -149,10 +151,14 @@ sourceList = (conf) =>
     file = c.replace conf.path.source, ''
     dir = dirname file
     ext = extname file
-    return r if isExcluded {
-      file
-      dir
-    }, _excludes
+    return r if (
+      _excludes.length isnt 0
+    ) and (
+      isExcluded {
+        file
+        dir
+      }, _excludes
+    )
     [
       r...
       {
@@ -201,6 +207,33 @@ getSubExtFiles = (ext, fileList) =>
     ]
   , []
 
+excludeSubs = (excludeSubNames, fileList) =>
+  fileList
+  .reduce (r, c) =>
+    arr = c.file.split '.'
+    if arr.length isnt 3
+    then [
+      r...
+      c
+    ]
+    else [
+      r...
+      (
+        excludeSubNames
+        .reduce (_r, _c) =>
+          [
+            _r...
+            (
+              if _c is arr[1]
+              then []
+              else [ c ]
+            )...
+          ]
+        , []
+      )...
+    ]
+  , []
+
 mergeFilesToConf = (conf, fileList) =>
 
   others = (
@@ -227,7 +260,13 @@ mergeFilesToConf = (conf, fileList) =>
           if fileList[exts[c].ext]?
           then(
             delete others[exts[c].ext]
-            files: fileList[exts[c].ext]
+            files:
+              if exts[c].excludeSubs?
+              then(
+                excludeSubs exts[c].excludeSubs
+                , fileList[exts[c].ext]
+              )
+              else fileList[exts[c].ext]
           )
           else(
             files: getSubExtFiles exts[c].ext, fileList

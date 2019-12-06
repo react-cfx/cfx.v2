@@ -13,6 +13,9 @@ export default
     'fs-extra'
     'is-plain-object'
     'klaw-sync'
+
+    'gulp'
+    'cfx.rollup-plugin-coffee2'
   ]
   devdep: [
     'autod'
@@ -20,7 +23,6 @@ export default
     'shelljs'
   ]
   keep: [
-    'cfx.styl'
   ]
   exclude: [
     './node_modules'

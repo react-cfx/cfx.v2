@@ -19,7 +19,6 @@ export default
   ]
   devdep: [
     'autod'
-    'cfx.require-plugin-coffee'
     'coffeescript'
     'shelljs'
     'replace'

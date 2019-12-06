@@ -5,7 +5,13 @@
   "bin": {
     "cfxbuilder": "./bin/cfxbuilder.js"
   },
-  "scripts": {},
+  "scripts": {
+    "autod": "autod",
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "rebuild": "gulp rebuild",
+    "postinstall": "npm run build"
+  },
   "devDependencies": {
     "autod": "^3.1.0",
     "coffeescript": "^2.4.1",
@@ -13,10 +19,11 @@
   },
   "dependencies": {
     "cfx.require-plugin-coffee": "~0.2.26",
-    "cfx.styl": "^0.2.0",
+    "cfx.rollup-plugin-coffee2": "~0.2.27",
     "ddeyes": "~0.2.26",
     "deepmerge": "~4.2.2",
     "fs-extra": "~8.1.0",
+    "gulp": "~4.0.2",
     "is-plain-object": "~3.0.0",
     "klaw-sync": "~6.0.0"
   }

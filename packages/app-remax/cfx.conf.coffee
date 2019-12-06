@@ -1,4 +1,5 @@
 import CoffeeScript from 'coffeescript'
+import cfs from 'cfx.styl'
 
 export default
 
@@ -7,6 +8,11 @@ export default
     coffee:
       libs: {
         CoffeeScript
+      }
+
+    cfsCoffee:
+      libs: {
+        cfs
       }
 
   others:

@@ -6,6 +6,12 @@
       "loglevel": "info",
       "registry": "https://registry.npm.taobao.org",
       "ignore": []
+    },
+    "add": {
+      "npmClient": "yarn",
+      "loglevel": "info",
+      "registry": "https://registry.npm.taobao.org",
+      "ignore": []
     }
   },
   "packages": [

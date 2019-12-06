@@ -7,4 +7,4 @@ export {
   cfxify
 }
 
-export default cfxifys cfy React.createFactory
+export default cfxifys cfy cfxify

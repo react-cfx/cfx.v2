@@ -1,10 +1,12 @@
 {
-  "name": "cfx.remax-taroui",
-  "version": "0.0.1",
+  "name": "cfx.app-remax",
+  "version": "0.2.0",
+  "author": "FooTearth",
   "scripts": {
     "dev": "remax build -t wechat -w"
   },
   "dependencies": {
+    "cfx.builder": "^0.2.0",
     "cfx.dom": "^0.2.0",
     "cfx.require-plugin-coffee": "~0.2.26",
     "cfx.styl": "^0.2.0",
@@ -20,7 +22,7 @@
   "devDependencies": {
     "autod": "^3.1.0",
     "cfx.builder": "^0.2.0",
-    "cfx.require-plugin-coffee": "^0.2.26",
+    "cfx.styl": "^0.2.0",
     "coffeescript": "^2.4.1",
     "remax-cli": "^1.5.2",
     "replace": "^1.1.1",

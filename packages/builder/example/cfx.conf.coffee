@@ -1,6 +1,6 @@
 # import dd from 'ddeyes'
 import CoffeeScript from 'coffeescript'
-import { cfs } from '../lib/plugins/cfs'
+import cfs from 'cfx.styl'
 # import css from 'css'
 
 export default

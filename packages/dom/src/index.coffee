@@ -1,16 +1,23 @@
-cfxify = (createFactoryOrElement, type = 'createFactory') =>
-  switch type
+cfxify = (createFactoryOrElement) =>
+  key = (
+    Object.keys createFactoryOrElement
+  )[0]
+  value = createFactoryOrElement[key]
+
+  switch key
     when 'createFactory'
     then (e) => createFactoryOrElement e
     when 'createElement'
     then(
-      (args...) =>
-        createFactoryOrElement.apply null
+      (e) => (args...) =>
+        value.apply null
         , [
-          args...
           e
+          args...
         ]
     )
+    else
+      throw new Error 'CFX conf isnt correct.'
 
 cfxifys = (_cfxify) =>
 
