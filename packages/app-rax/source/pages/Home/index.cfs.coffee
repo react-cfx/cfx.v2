@@ -2,7 +2,7 @@ import {
   rpx
   joinS as js
   color as c
-} from '../../utils/cfs'
+} from '../../utils/cfsHelper'
 
 export default
 

@@ -1,6 +1,6 @@
 import {
   rpx
-} from '../../utils/cfs'
+} from '../../utils/cfsHelper'
 
 export default
   logo:

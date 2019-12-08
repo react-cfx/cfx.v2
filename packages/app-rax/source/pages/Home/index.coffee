@@ -8,11 +8,13 @@ import styl from 'cfx.styl'
 import style from './index.cfs'
 import styles from './index.cfs.css'
 
-classes = (
-  styl style
-).classes()
+import CFS from '../../utils/cfs'
 
-import { className } from '../../utils/cfs'
+S = CFS {
+  styl
+  style
+  styles
+}
 
 C = CFX {
   View
@@ -23,15 +25,15 @@ C = CFX {
 export default =>
 
   C.View 
-    style: styles[className classes.home]
+    style: S.home
   ,
     C.Logo {}
     C.Text
-      style: styles[className classes.title]
+      style: S.title
     , 'Welcome to Your Rax App'
     C.Text
-      style: styles[className classes.info]
+      style: S.info
     , 'More information about Rax'
     C.Text
-      style: styles[className classes.info]
+      style: S.info
     , 'Visit https://rax.js.org'
