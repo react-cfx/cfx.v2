@@ -3,7 +3,26 @@ rpx = (n) => "#{n}rpx"
 vh = (n) => "#{n}vh"
 per = (n) => "#{n}%"
 
-color = (n) => "##{n}"
+color = (n) =>
+  arrN = "#{n}".split ''
+  switch arrN.length
+    when 6
+    then "##{n}"
+    when 3
+    then "##{n}#{n}"
+    when 2
+    then "##{n}#{n}#{n}"
+    when 1
+    then [
+      '#'
+      n
+      n
+      n
+      n
+      n
+      n
+    ].join ''
+    else "##{n}"
 
 makeArray = (a) =>
   unless Array.isArray a

@@ -20,10 +20,10 @@ import hashClassKey from '../../src/plugins/hashClassKey'
 
 target.render = =>
 
-  subSelectorName = (selectorName, parentName) =>
-    if selectorName.includes '&'
-    then selectorName.replace '&', parentName
-    else "#{parentName} #{selectorName}"
+  # subSelectorName = (selectorName, parentName) =>
+  #   if selectorName.includes '&'
+  #   then selectorName.replace '&', parentName
+  #   else "#{parentName} #{selectorName}"
 
   plugins = [
     hashClassKey()
@@ -46,11 +46,11 @@ target.render = =>
       position: 'relative'
       backgroundColor: '#f7f7f7'
 
-      pageIndex:
+      '.pageIndex':
         position: 'relative'
         backgroundColor: '#f8f8f8'
 
-        "pageIndex.classTemp":
+        ':classTemp':
           position: 'relative'
           backgroundColor: '#f9f9f9'
 

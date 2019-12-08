@@ -287,6 +287,10 @@ ccs = (km) =>
   , {}
 
 export {
+  isUpper
+  isChar
+  isLower
+
   isSlash
   isCamel
 

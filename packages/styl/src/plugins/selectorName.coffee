@@ -2,6 +2,7 @@
 
 import {
   classKey 
+  isChar
 } from '../classKey'
 
 export default =>
@@ -12,4 +13,8 @@ export default =>
 
     return unless actionPoint is 'selectorName'
 
-    ".#{classKey selectorName}"
+    _selectorName = classKey selectorName
+
+    if isChar _selectorName.charAt 0
+    then ".#{_selectorName}"
+    else _selectorName

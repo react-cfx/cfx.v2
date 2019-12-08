@@ -3,6 +3,8 @@
   "version": "0.2.0",
   "author": "FooTearth",
   "scripts": {
+    "cfx": "cfxbuilder",
+    "recfx": "rm -rf src; cfxbuilder",
     "dev": "remax build -t wechat -w"
   },
   "dependencies": {
