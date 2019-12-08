@@ -5,11 +5,14 @@ import Image from 'rax-image'
 import styl from 'cfx.styl'
 import style from './index.cfs'
 import styles from './index.cfs.css'
-classes = (
-  styl style
-).classes()
 
-import { className } from '../../utils/cfs'
+import CFS from '../../utils/cfs'
+
+S = CFS {
+  styl
+  style
+  styles
+}
 
 C = CFX {
   Image
