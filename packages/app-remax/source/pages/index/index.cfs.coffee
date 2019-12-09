@@ -4,8 +4,8 @@ import {
   joinS as js
   color as c
   rgba
-  matrix
-  translate
+  # matrix
+  # translate
 } from '../../utils/cfsHelper'
 
 export default

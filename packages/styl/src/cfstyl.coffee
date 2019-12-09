@@ -1,4 +1,4 @@
-import dd from 'ddeyes'
+# import dd from 'ddeyes'
 
 pluginsCall = (plugins, actionPoint, defValue) =>
 
@@ -13,7 +13,11 @@ pluginsCall = (plugins, actionPoint, defValue) =>
   )
   else defValue
 
-recRenderer = (_selectorName, selectorBody, plugins) =>
+recRenderer = (
+  _selectorName
+  selectorBody
+  plugins
+) =>
 
   ### :PluginPoint
   # -- 'selectorName'
@@ -30,7 +34,7 @@ recRenderer = (_selectorName, selectorBody, plugins) =>
     ruleV = selectorBody[ruleK]
 
     switch typeof ruleV
-      when 'string'
+      when 'string', 'number'
       then(
 
         ### :PluginPoint
@@ -79,7 +83,7 @@ recRenderer = (_selectorName, selectorBody, plugins) =>
               [
                 _r_...
                 name: [
-                  r[r.length - 1].name...
+                  r[0].name...
                   _c_.name...
                 ]
                 body: _c_.body

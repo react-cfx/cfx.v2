@@ -52,7 +52,16 @@ target.render = =>
 
         ':classTemp':
           position: 'relative'
+          marginBottom: 0
           backgroundColor: '#f9f9f9'
+
+      pageSecond:
+        position: 'relative'
+        backgroundColor: '#f0f0f0'
+
+        ':classSecond':
+          position: 'relative'
+          backgroundColor: '#f4f4f4'
 
   render = renderer.render style
   classes = renderer.getClasses()
