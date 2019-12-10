@@ -1,5 +1,5 @@
 # import dd from 'ddeyes'
-import hash from 'object-hash'
+import hash from 'hash-sum'
 import { camelToSlash } from '../classKey'
 
 export default =>
@@ -14,7 +14,7 @@ export default =>
       Object.keys style
     )
     .reduce (r, c) =>
-      hashClassKey = "#{camelToSlash c}-#{((hash style[c]).split '')[0..5].join ''}"
+      hashClassKey = "#{camelToSlash c}-#{hash style[c]}"
       hashClassKeys: {
         r.hashClassKeys...
         [c]: ".#{hashClassKey}"

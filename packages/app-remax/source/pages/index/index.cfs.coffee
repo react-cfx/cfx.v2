@@ -12,7 +12,7 @@ export default
 
   page:
     position: 'relative'
-    backgroundColor: c 'f8'
+    backgroundColor: '#f8f8f8'
 
     view:
       boxSizing: 'border-box'
@@ -36,7 +36,7 @@ export default
 
     pageTitle:
       marginTop: px 24
-      color: c 333
+      color: '#333'
       fontSize: px 36
       textAlign: 'center'
 
