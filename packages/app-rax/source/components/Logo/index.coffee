@@ -21,6 +21,6 @@ C = CFX {
 export default (props) =>
 
   C.Image
-    style: styles[className classes.logo]
+    style: S.logo
     source:
       uri: '//gw.alicdn.com/tfs/TB1MRC_cvb2gK0jSZK9XXaEgFXa-1701-1535.png'

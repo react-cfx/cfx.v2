@@ -129,7 +129,6 @@ Renderer = (cfstyls, plugins) =>
   selectorNames = Object.keys cfstyls
   selectorNames
   .reduce (_r, selectorName) =>
-
     [
       _r...
       (
@@ -265,7 +264,7 @@ createRenderer = (options) =>
 
     styles = {
       (
-        if cfstyls._fonts?
+        if (Object.keys cfstyls._fonts).length isnt 0
         then(
           '@font-face':
             cfstyls._fonts
@@ -273,7 +272,7 @@ createRenderer = (options) =>
         else {}
       )...
       (
-        if cfstyls._global?
+        if (Object.keys cfstyls._global).length isnt 0
         then(
           '@global':
             cfstyls._global
@@ -281,7 +280,7 @@ createRenderer = (options) =>
         else {}
       )...
       (
-        if cfstyls._tags?
+        if (Object.keys cfstyls._tags).length isnt 0
         then(
           '@tags':
             cfstyls._tags
