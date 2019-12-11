@@ -1,6 +1,6 @@
 {
   "name": "cfx.app-rax",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "FooTearth",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "cfx.dom": "^0.2.2",
-    "cfx.styl": "^0.2.2",
+    "cfx.styl": "^0.2.3",
     "rax": "^1.0.8",
     "rax-app": "^0.2.0",
     "rax-image": "^1.0.3",
