@@ -1,6 +1,6 @@
 {
   "name": "cfx.app-remax",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "FooTearth",
   "private": true,
   "scripts": {
@@ -10,10 +10,9 @@
     "dev": "remax build -t wechat -w"
   },
   "dependencies": {
-    "cfx.builder": "^0.2.0",
-    "cfx.dom": "^0.2.0",
+    "cfx.dom": "^0.2.2",
     "cfx.require-plugin-coffee": "~0.2.26",
-    "cfx.styl": "^0.2.1",
+    "cfx.styl": "^0.2.2",
     "clsx": "~1.0.4",
     "color": "~3.1.2",
     "color-blend": "~2.0.8",
@@ -26,8 +25,7 @@
   },
   "devDependencies": {
     "autod": "^3.1.0",
-    "cfx.builder": "^0.2.0",
-    "cfx.styl": "^0.2.0",
+    "cfx.builder": "^0.2.2",
     "coffeescript": "^2.4.1",
     "remax-cli": "^1.8.0",
     "replace": "^1.1.1",

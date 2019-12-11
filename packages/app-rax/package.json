@@ -1,6 +1,6 @@
 {
   "name": "cfx.app-rax",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "FooTearth",
   "private": true,
   "scripts": {
@@ -13,8 +13,8 @@
     "start:weex": "rax-scripts start"
   },
   "dependencies": {
-    "cfx.dom": "^0.2.0",
-    "cfx.styl": "^0.2.1",
+    "cfx.dom": "^0.2.2",
+    "cfx.styl": "^0.2.2",
     "rax": "^1.0.8",
     "rax-app": "^0.2.0",
     "rax-image": "^1.0.3",
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@alib/build-scripts": "^0.1.0",
     "build-plugin-rax-app": "^0.1.0",
-    "cfx.builder": "^0.2.0",
+    "cfx.builder": "^0.2.2",
     "cfx.require-plugin-coffee": "^0.2.26",
     "coffeescript": "^2.4.1",
     "rax-plugin-app": "^0.2.0",
