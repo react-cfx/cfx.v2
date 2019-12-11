@@ -124,21 +124,25 @@ excludesList = (conf) =>
   return [] unless conf?.excludes?
 
   unless Array.isArray conf.excludes
-  then(
-    if typeof conf.excludes is 'string'
-    then [ conf.excludes ]
-    else []
-  )
+  then [ conf.excludes ]
   else conf.excludes
 
 isExcluded = ({file, dir}, excludes) =>
-  dd 1
-  excludes.reduce (r, c) =>
-    return r unless (typeof c) is 'string'
+  (
+    unless Array.isArray excludes
+    then [ excludes ]
+    else excludes
+  )
+  .reduce (r, c) =>
     return r if r is true
-    return true if dir is c
-    return true if file is c
-    false
+    if (typeof c) is 'string'
+      return true if dir is c
+      return true if file is c
+      return true if file.includes c
+      false
+    else if c.constructor is RegExp
+      c.test file
+    else false
   , false
 
 sourceList = (conf) =>
@@ -234,6 +238,25 @@ excludeSubs = (excludeSubNames, fileList) =>
     ]
   , []
 
+excludesExt = (files, excludes) =>
+  files.reduce (r, c) =>
+    {
+      file
+      dir
+    } = c
+    [
+      r...
+      (
+        if isExcluded {
+          file
+          dir
+        }, excludes
+        then []
+        else [ c ]
+      )...
+    ]
+  , []
+
 mergeFilesToConf = (conf, fileList) =>
 
   others = (
@@ -252,26 +275,34 @@ mergeFilesToConf = (conf, fileList) =>
     Object.keys exts
   )
   .reduce (r, c) =>
+
+    files =
+      if fileList[exts[c].ext]?
+      then(
+
+        delete others[exts[c].ext]
+
+        if exts[c].excludeSubs?
+        then(
+          excludeSubs exts[c].excludeSubs
+          , fileList[exts[c].ext]
+        )
+        else fileList[exts[c].ext]
+      )
+      else(
+        getSubExtFiles exts[c].ext, fileList
+      )
+
+    files =
+      if exts[c].excludes?
+      then excludesExt files, exts[c].excludes
+      else files
+
     {
       r...
       [c]: {
         exts[c]...
-        (
-          if fileList[exts[c].ext]?
-          then(
-            delete others[exts[c].ext]
-            files:
-              if exts[c].excludeSubs?
-              then(
-                excludeSubs exts[c].excludeSubs
-                , fileList[exts[c].ext]
-              )
-              else fileList[exts[c].ext]
-          )
-          else(
-            files: getSubExtFiles exts[c].ext, fileList
-          )
-        )...
+        files: files
       }
     }
   , {}

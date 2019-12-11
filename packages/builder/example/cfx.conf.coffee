@@ -1,6 +1,6 @@
 # import dd from 'ddeyes'
 import CoffeeScript from 'coffeescript'
-import cfs from 'cfx.styl'
+import cfs from '../../styl/dist'
 # import css from 'css'
 
 export default
@@ -17,10 +17,7 @@ export default
         cfs
       }
 
-  excludes: [
-    '/hello.coffee'
-    '/hello'
-  ]
+  excludes: /hello/
 
   others:
     action: 'copy'

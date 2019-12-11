@@ -13,10 +13,10 @@ import {
   ccs
 } from '../../src/classKey'
 
-import selectorNamePlugin from '../../src/plugins/selectorName'
-import classNamesPlugin from '../../src/plugins/classNames'
-import ruleKPlugin from '../../src/plugins/ruleK'
-import hashClassKey from '../../src/plugins/hashClassKey'
+import * as _plugins from '../../src/plugins'
+
+import icons from './style/icons'
+import { iconfont } from './style/fonts'
 
 target.render = =>
 
@@ -26,10 +26,13 @@ target.render = =>
   #   else "#{parentName} #{selectorName}"
 
   plugins = [
-    hashClassKey()
-    selectorNamePlugin()
-    classNamesPlugin()
-    ruleKPlugin()
+    _plugins.at._fonts()
+    _plugins.at._global()
+    _plugins.hashClassKey()
+
+    _plugins.selectorName()
+    _plugins.classNames()
+    _plugins.ruleK()
   ]
 
   renderer = createRenderer {
@@ -41,6 +44,20 @@ target.render = =>
   }
 
   style = 
+
+    '@fonts': {
+      iconfont
+    }
+
+    '@tags':
+      page:
+        position: 'relative'
+        backgroundColor: '#f0f0f0'
+
+    '@global': {
+      icons...
+    }
+
     page:
 
       position: 'relative'
@@ -75,3 +92,16 @@ target.render = =>
   # }
 
   console.log css
+
+import fontsPlugin from '../../src/plugins/at/fonts'
+
+target.fonts = =>
+
+  style =
+    iconfont: [
+      'data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAA'
+    ]
+
+  dd(
+    fontsPlugin() style, '@fonts'
+  )

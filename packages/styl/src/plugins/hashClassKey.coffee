@@ -15,14 +15,8 @@ export default =>
     )
     .reduce (r, c) =>
       hashClassKey = "#{camelToSlash c}-#{hash style[c]}"
-      hashClassKeys: {
-        r.hashClassKeys...
-        [c]: ".#{hashClassKey}"
-      }
-      cfstyls: {
-        r.cfstyls...
+      {
+        r...
         [hashClassKey]: style[c]
       }
-    ,
-      hashClassKeys: {}
-      cfstyls: {}
+    , {}

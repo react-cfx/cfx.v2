@@ -1,6 +1,8 @@
 import * as React from 'react'
 import CFX from './utils/cfx'
 
+import './app.cfs.css'
+
 Context = React.createContext {}
 
 c = CFX

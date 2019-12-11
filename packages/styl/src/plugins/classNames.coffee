@@ -10,6 +10,7 @@ export default =>
     return unless actionPoint is 'classNames'
 
     classNames.reduce (r, c) =>
+
       lastClass = last r
       [
         r...

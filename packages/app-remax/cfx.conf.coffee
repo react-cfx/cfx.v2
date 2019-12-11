@@ -15,5 +15,7 @@ export default
         cfs
       }
 
+  excludes: '/style'
+
   others:
     action: 'copy'

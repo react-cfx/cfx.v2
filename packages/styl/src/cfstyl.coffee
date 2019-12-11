@@ -17,15 +17,23 @@ recRenderer = (
   _selectorName
   selectorBody
   plugins
+  rootSpace
 ) =>
 
-  ### :PluginPoint
-  # -- 'selectorName'
-  ###
   selectorName =
-    pluginsCall plugins
-    , 'selectorName'
-    , _selectorName
+
+    if rootSpace in [
+      '@fonts'
+      '@tags'
+    ]
+    then _selectorName
+    else
+      ### :PluginPoint
+      # -- 'selectorName'
+      ###
+      pluginsCall plugins
+      , 'selectorName'
+      , _selectorName
 
   ruleKs = Object.keys selectorBody
   ruleKs
@@ -75,6 +83,7 @@ recRenderer = (
           ruleK
           ruleV
           plugins
+          rootSpace
         )
         [
           r...
@@ -100,17 +109,61 @@ recRenderer = (
     body: {}
   ]
 
+getClasses = (styles) =>
+  (
+    Object.keys styles
+  )
+  .reduce (r, c) =>
+    {
+      r...
+      (
+        if c.includes '-'
+        then [(c.split '-')[0]]: ".#{c}"
+        else [c]: c
+      )...
+    }
+  , {}
+
 Renderer = (cfstyls, plugins) =>
 
   selectorNames = Object.keys cfstyls
   selectorNames
   .reduce (_r, selectorName) =>
+
     [
       _r...
       (
-        recRenderer selectorName
-        , cfstyls[selectorName] 
-        , plugins
+        switch selectorName
+          when '@font-face'
+          then(
+            recRenderer selectorName
+            , cfstyls[selectorName] 
+            , plugins
+            , '@fonts'
+          )
+          when '@tags', '@global'
+          then(
+            (
+              Object.keys cfstyls[selectorName] 
+            )
+            .reduce (_r_, _c_) =>
+              [
+                _r_...
+                (
+                  recRenderer _c_
+                  , cfstyls[selectorName][_c_]
+                  , plugins
+                  , selectorName
+                )...
+              ]
+            , []
+          )
+          else(
+            recRenderer selectorName
+            , cfstyls[selectorName] 
+            , plugins
+            , '@styles'
+          )
       )...
     ]
   , []
@@ -141,20 +194,105 @@ createRenderer = (options) =>
 
   render: (_cfstyls) =>
 
-    ### :PluginPoind
+    cfstyls = (
+      Object.keys _cfstyls
+    )
+    .reduce (r, c) =>
+      {
+        r...
+        (
+          switch c
+            
+            when '@fonts'
+            then(
+              _fonts: {
+                r._fonts...
+                ### :PluginPoint
+                # -- '@font'
+                ###
+                (
+                  pluginsCall plugins
+                  , '@fonts'
+                  , _cfstyls[c]
+                )...
+              }
+            )
+
+            when '@global'
+            then(
+              _global: {
+                r._global...
+                ### :PluginPoint
+                # -- '@global'
+                ###
+                (
+                  pluginsCall plugins
+                  , '@global'
+                  , _cfstyls[c]
+                )...
+              }
+            )
+
+            when '@tags'
+            then(
+              _tags: {
+                r._tags...
+                _cfstyls[c]...
+              }
+            )
+
+            else(
+              _styles: {
+                r._styles...
+                [c]: _cfstyls[c]
+              }
+            )
+        )...
+      }
+    ,
+      _fonts: {}
+      _global: {}
+      _tags: {}
+      _styles: {}
+
+    ### :PluginPoint
     # -- 'hashClassKey'
     ###
-    {
-      hashClassKeys
-      cfstyls
-    } =
+    _styles =
       pluginsCall plugins
       , 'hashClassKey'
-      , _cfstyls
+      , cfstyls._styles
 
-    classes = hashClassKeys
+    styles = {
+      (
+        if cfstyls._fonts?
+        then(
+          '@font-face':
+            cfstyls._fonts
+        )
+        else {}
+      )...
+      (
+        if cfstyls._global?
+        then(
+          '@global':
+            cfstyls._global
+        )
+        else {}
+      )...
+      (
+        if cfstyls._tags?
+        then(
+          '@tags':
+            cfstyls._tags
+        )
+        else {}
+      )...
+      _styles... 
+    }
 
-    Renderer cfstyls, plugins
+    classes = getClasses _styles
+    Renderer styles, plugins
 
   getClasses: => classes
 

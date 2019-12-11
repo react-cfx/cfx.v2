@@ -3,21 +3,27 @@ import {
   renderToString
 } from './cfstyl'
 
+import * as classUtil from './classKey'
+
 import * as plugins from './plugins'
 
 export {
   createRenderer
   renderToString
   plugins
+  classUtil
 }
 
 export default (styles) =>
 
   cfsPlugins = [
+    plugins.at._fonts()
+    plugins.at._global()
+    plugins.hashClassKey()
+
     plugins.selectorName()
     plugins.classNames()
     plugins.ruleK()
-    plugins.hashClassKey()
   ]
 
   render = createRenderer
