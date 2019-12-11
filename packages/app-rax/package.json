@@ -3,8 +3,9 @@
   "version": "0.2.1",
   "author": "FooTearth",
   "scripts": {
+    "clean": "rimraf ./src",
     "cfx": "cfxbuilder",
-    "recfx": "rm -rf src; cfxbuilder",
+    "recfx": "npm run clean; cfxbuilder",
     "build:web": "rax/index.coffee web; build-scripts build",
     "start:web": "build-scripts start",
     "build:weex": "rax/index.coffee weex; rax-scripts build",

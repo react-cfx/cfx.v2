@@ -3,8 +3,9 @@
   "version": "0.2.1",
   "author": "FooTearth",
   "scripts": {
+    "clean": "rimraf ./src",
     "cfx": "cfxbuilder",
-    "recfx": "rm -rf src; cfxbuilder",
+    "recfx": "npm run clean; cfxbuilder",
     "dev": "remax build -t wechat -w"
   },
   "dependencies": {
