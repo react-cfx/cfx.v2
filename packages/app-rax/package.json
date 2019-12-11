@@ -2,6 +2,7 @@
   "name": "cfx.app-rax",
   "version": "0.2.1",
   "author": "FooTearth",
+  "private": true,
   "scripts": {
     "clean": "rimraf ./src",
     "cfx": "cfxbuilder",
