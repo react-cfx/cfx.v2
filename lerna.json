@@ -12,6 +12,14 @@
       "loglevel": "info",
       "registry": "https://registry.npm.taobao.org",
       "ignore": []
+    },
+    "publish": {
+      "npmClient": "npm",
+      "loglevel": "info",
+      "ignore": [
+        "cfx.app-rax",
+        "cfx.app-remax"
+      ]
     }
   },
   "packages": [
