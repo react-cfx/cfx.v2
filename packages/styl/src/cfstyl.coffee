@@ -1,5 +1,7 @@
 # import dd from 'ddeyes'
 
+import { slashToCamel } from './classKey'
+
 pluginsCall = (plugins, actionPoint, defValue) =>
 
   if plugins?
@@ -118,7 +120,15 @@ getClasses = (styles) =>
       r...
       (
         if c.includes '-'
-        then [(c.split '-')[0]]: ".#{c}"
+        then(
+          arr = c.split '-'
+          [(
+            slashToCamel(
+              arr[0..(arr.length - 2)]
+              .join '-'
+            )
+          )]: ".#{c}"
+        )
         else [c]: c
       )...
     }
@@ -291,6 +301,7 @@ createRenderer = (options) =>
     }
 
     classes = getClasses _styles
+
     Renderer styles, plugins
 
   getClasses: => classes
