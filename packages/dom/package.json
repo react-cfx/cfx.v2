@@ -14,7 +14,6 @@
   "devDependencies": {
     "autod": "^3.1.0",
     "cfx.rollup-plugin-coffee2": "^0.2.27",
-    "cfx.styl": "^0.2.0",
     "gulp": "^4.0.2",
     "rimraf": "^3.0.0"
   },

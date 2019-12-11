@@ -1,6 +1,6 @@
 {
   "name": "cfx.app-remax",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "FooTearth",
   "scripts": {
     "cfx": "cfxbuilder",
@@ -11,7 +11,7 @@
     "cfx.builder": "^0.2.0",
     "cfx.dom": "^0.2.0",
     "cfx.require-plugin-coffee": "~0.2.26",
-    "cfx.styl": "^0.2.0",
+    "cfx.styl": "^0.2.1",
     "clsx": "~1.0.4",
     "color": "~3.1.2",
     "color-blend": "~2.0.8",
