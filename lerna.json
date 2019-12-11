@@ -16,7 +16,7 @@
     "publish": {
       "npmClient": "npm",
       "loglevel": "info",
-      "ignore": [
+      "ignoreChanges": [
         "cfx.app-rax",
         "cfx.app-remax"
       ]
