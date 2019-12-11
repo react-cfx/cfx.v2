@@ -23,7 +23,9 @@
     }
   },
   "packages": [
-    "packages/*"
+    "packages/cfx.dom",
+    "packages/cfx.styl",
+    "packages/cfx.builder"
   ],
   "version": "0.2.0"
 }
