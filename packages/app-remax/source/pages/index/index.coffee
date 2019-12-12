@@ -38,7 +38,7 @@ export default =>
 
   C.View
     className: clsx [
-      S.page
+      'page'
       S.pageIndex
     ]
   ,

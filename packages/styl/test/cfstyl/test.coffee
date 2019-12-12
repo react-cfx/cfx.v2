@@ -72,13 +72,21 @@ target.render = =>
           marginBottom: 0
           backgroundColor: '#f9f9f9'
 
-      pageSecond:
+    pageSecond:
+      position: 'relative'
+      backgroundColor: '#f0f0f0'
+
+      '&__item':
         position: 'relative'
         backgroundColor: '#f0f0f0'
 
         ':classSecond':
           position: 'relative'
           backgroundColor: '#f4f4f4'
+
+        '&__item':
+          position: 'relative'
+          backgroundColor: '#f8f8f8'
 
   render = renderer.render style
   classes = renderer.getClasses()

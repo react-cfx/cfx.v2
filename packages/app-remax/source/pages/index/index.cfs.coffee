@@ -10,13 +10,6 @@ export default ({
   }
 }) =>
 
-  page:
-    position: 'relative'
-    backgroundColor: '#f8f8f8'
-
-    view:
-      boxSizing: 'border-box'
-
   pageIndex:
     paddingTop: px 60
     paddingBottom: px 100

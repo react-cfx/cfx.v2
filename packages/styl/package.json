@@ -15,9 +15,9 @@
     "css": "^2.2.4"
   },
   "dependencies": {
-    "@babel/runtime": "~7.7.4",
+    "@babel/runtime": "~7.7.6",
     "ddeyes": "~0.2.26",
-    "hash-sum": "^2.0.0"
+    "hash-sum": "~2.0.0"
   },
   "devDependencies": {
     "autod": "^3.1.0",

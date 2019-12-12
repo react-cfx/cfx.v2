@@ -7,7 +7,7 @@ export default
   test: []
   dep: [
     'ddeyes'
-    'object-hash'
+    'hash-sum'
   ]
   devdep: [
     'autod'

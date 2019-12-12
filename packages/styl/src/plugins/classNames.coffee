@@ -10,8 +10,14 @@ export default =>
     return unless actionPoint is 'classNames'
 
     classNames.reduce (r, c) =>
-
-      lastClass = last r
+      _lastClass = last r
+      lastClass = do =>
+        if r.length is 1
+          arr = _lastClass.split '-' 
+          if _lastClass.includes '-'
+            arr[0..arr.length - 2]
+            .join '-'
+        else _lastClass
       [
         r...
         c.split ''

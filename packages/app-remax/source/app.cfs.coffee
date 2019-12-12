@@ -22,4 +22,7 @@ export default
 
   '@global': {
     icons...
+
+    page:
+      position: 'relative'
   }
