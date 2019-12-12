@@ -1,8 +1,8 @@
-import {
-  rpx
-} from '../../utils/cfsHelper'
-
-export default
+export default ({
+  cfs: {
+    rpx
+  }
+}) =>
   logo:
     width: rpx 200
     height: rpx 180

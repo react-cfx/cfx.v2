@@ -1,10 +1,10 @@
-import {
-  rpx
-  joinS as js
-  color as c
-} from '../../utils/cfsHelper'
-
-export default
+export default ({
+  cfs: {
+    rpx
+    joinS: js
+    color: c
+  }
+}) =>
 
   home:
     alignItems: 'center'

@@ -1,9 +1,4 @@
 import tint from '../mixins/libs/tint'
-import {
-  px
-  per
-  cubicBezier
-} from '../../CFX/style/helper'
 
 hd = 2 # 基本单位
 
@@ -94,7 +89,10 @@ color =
     base: '#CCC'
 
 # Border Radius
-border =
+border = ({
+  px
+  per
+}) =>
   radius:
     sm: px 2 * hd
     md: px 4 * hd
@@ -107,7 +105,9 @@ opacity =
   disabled: 0.3 # Button 等组件禁用态的透明度
 
 # Font
-font =
+font = ({
+  px
+}) =>
   size:
     xs: px 10 * hd # 非常用字号，用于标签
     sm: px 12 * hd # 用于辅助信息
@@ -123,7 +123,9 @@ line =
     en: 1.3 # 英文多行
     zh: 1.5 # 中文多行
 
-spacing =
+spacing = ({
+  px
+}) =>
   # 水平间距
   h:
     sm: px 5 * hd
@@ -140,7 +142,9 @@ spacing =
     xl: px 15 * hd
 
 # 图标尺寸
-icon =
+icon = ({
+  px
+}) =>
   size:
     sm: px 18 * hd
     md: px 22 * hd
@@ -165,7 +169,9 @@ zIndex =
   toast: 1090
 
 # timing function
-timing =
+timing = ({
+  cubicBezier
+}) =>
   func: cubicBezier [
     0.36
     0.66
@@ -177,7 +183,9 @@ timing =
 # CSS cubic-bezier timing functions
 # http://bourbon.io/docs/#timing-functions
 ##
-ease = 
+ease = ({
+  cubicBezier
+}) =>
   in:
     quad: cubicbezier [
       0.550

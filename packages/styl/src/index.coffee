@@ -4,8 +4,8 @@ import {
 } from './cfstyl'
 
 import * as classUtil from './classKey'
-
 import * as plugins from './plugins'
+import * as cfs from './cfs'
 
 export {
   createRenderer
@@ -14,7 +14,17 @@ export {
   classUtil
 }
 
-export default (styles) =>
+export default (_styles) =>
+
+  styles =
+    switch typeof _styles
+      when 'object'
+      then _styles
+      when 'function'
+      then _styles {
+        cfs
+      }
+      else _styles
 
   cfsPlugins = [
     plugins.at._fonts()

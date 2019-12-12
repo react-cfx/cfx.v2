@@ -1,14 +1,14 @@
-import {
-  px
-  per as p
-  joinS as js
-  color as c
-  rgba
-  # matrix
-  # translate
-} from '../../utils/cfsHelper'
-
-export default
+export default ({
+  cfs: {
+    px
+    per: p
+    joinS: js
+    color: c
+    rgba
+    # matrix
+    # translate
+  }
+}) =>
 
   page:
     position: 'relative'
