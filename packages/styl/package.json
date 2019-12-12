@@ -1,6 +1,6 @@
 {
   "name": "cfx.styl",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "FooTearth",
   "main": "dist/index.js",
   "module": "dist/es/index.js",
