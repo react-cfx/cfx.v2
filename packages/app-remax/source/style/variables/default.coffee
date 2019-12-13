@@ -33,8 +33,6 @@ color =
     '#F7F7F7'
   ]
 
-  white: '#FFF'
-
   # Text Color
   text:
     base:

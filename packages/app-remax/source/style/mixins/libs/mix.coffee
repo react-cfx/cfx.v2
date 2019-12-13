@@ -19,7 +19,7 @@ getPerscent = (percent) =>
   then percentToFloat percent
   else percent
 
-mix = (color1, color2, percent) =>
+export default (color1, color2, percent) =>
   _percent = getPerscent percent
   Color color1
   .mix(
@@ -27,9 +27,7 @@ mix = (color1, color2, percent) =>
     _percent
   )
 
-export {
-  mix
-}
+
 export default (color, percent) =>
 
   mix(

@@ -1,7 +1,26 @@
-px = (n) => "#{n}px"
-rpx = (n) => "#{n}rpx"
-vh = (n) => "#{n}vh"
-per = (n) => "#{n}%"
+unit = (u) =>
+  (n) => "#{n}#{u}"
+units = (arrUnit) =>
+  arrUnit
+  .reduce (r, u) =>
+    {
+      r...
+      [u]: unit u
+    }
+  , {}
+
+{
+  px
+  rpx
+  vh
+  per
+} = units [
+  'px'
+  'rpx'
+  'vh'
+  'per'
+]
+per = unit '%'
 
 color = (n) =>
   arrN = "#{n}".split ''
@@ -52,6 +71,10 @@ fujs = (funcName, a) =>
   ,
     joinS makeArray a
 
+scale = (n) => func 'scale', n
+scaleX = (n) => func 'scaleX', n
+scaleY = (n) => func 'scaleY', n
+
 rgba = (a) =>
   fujp 'rgba', a
 cubicBezier = (a) =>
@@ -65,6 +88,9 @@ calc = (a) =>
   fujs 'calc', a
 
 export {
+  unit
+  units
+
   px
   rpx
   vh
@@ -73,11 +99,15 @@ export {
 
   color
 
+  func
+  fujp 
+
   joinS
   joinP
 
-  func
-  fujp 
+  scale
+  scaleX
+  scaleY
 
   rgba
   cubicBezier
