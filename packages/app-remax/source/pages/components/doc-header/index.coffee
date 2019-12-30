@@ -21,7 +21,7 @@ C = CFX {
 export default (props) =>
 
   { title } = props
-  title or= '标题' 
+  title = '标题' unless title?
 
   C.View
     className: S.docHeader
