@@ -9,6 +9,8 @@ import {
   Text
 } from 'remax/wechat'
 
+import DocsHeader from '../../components/doc-header'
+
 import CFX from '../../../utils/cfx'
 import CFS from '../../../utils/cfs'
 
@@ -25,63 +27,65 @@ S = CFS {
 C = CFX {
   View
   Text
+  DocsHeader
 }
 
-export default (props) =>
+export default =>
 
   C.View
     className: 'page'
   ,
-    C.Text {}
-    , 'Color 颜色'
+
+    C.DocsHeader
+      title: 'Color 颜色'
   
-  C.View
-    className: 'doc-body'
-  ,
-    colorData.map (item) =>
-
-      C.View
-        className: 'panel'
-        key: item.type
-      ,
-        C.View
-          className: 'panel__title'
-        , item.type
+    C.View
+      className: 'doc-body'
+    ,
+      colorData.map (item) =>
 
         C.View
-          className: 'panel__content'
+          className: 'panel'
+          key: item.type
         ,
           C.View
-            className: S.colorList
+            className: 'panel__title'
+          , item.type
+
+          C.View
+            className: 'panel__content'
           ,
-            item.data.map (color) =>
-
-              C.View
-                className: S.colorItem
-                key: color.hex
-              ,
+            C.View
+              className: S.colorList
+            ,
+              item.data.map (color) =>
 
                 C.View
-                  className: 'circle'
-                  style:
-                    background: color.hex
+                  className: S.colorItem
+                  key: color.hex
                 ,
+
                   C.View
-                    className: 'inner-circle-1'
-                  
-                  C.View
-                    className: 'inner-circle-2'
+                    className: 'circle'
                     style:
-                      borderColor: color.hex
+                      background: color.hex
+                  ,
+                    C.View
+                      className: 'inner-circle-1'
+                    
+                    C.View
+                      className: 'inner-circle-2'
+                      style:
+                        borderColor: color.hex
 
-                C.View
-                  className: 'color-item__info'
-                ,
-                  C.Text
-                    className: 'name'
-                  , color.name
+                  C.View
+                    className: 'color-item__info'
+                  ,
+                    C.Text
+                      className: 'name'
+                    , color.name
 
-                  C.Text
-                    className: 'hex'
-                    selectable: true
-                  , color.hex
+                    C.Text
+                      className: 'hex'
+                      selectable: true
+                    , color.hex
