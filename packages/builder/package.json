@@ -18,7 +18,7 @@
     "shelljs": "^0.8.3"
   },
   "dependencies": {
-    "@babel/runtime": "~7.7.6",
+    "@babel/runtime": "~7.7.7",
     "cfx.require-plugin-coffee": "~0.2.26",
     "cfx.rollup-plugin-coffee2": "~0.2.27",
     "ddeyes": "~0.2.26",
