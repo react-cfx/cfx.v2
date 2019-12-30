@@ -1,8 +1,11 @@
 import React, { useState, useEffect} from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
+
 import CFX  from '../../utils/cfx'
 import CFS from '../../utils/cfs'
+
 import mergeStyle from '../../common/components'
+
 import styl from 'cfx.styl'
 import style from './index.cfs'
 import './index.cfs.css'
@@ -47,7 +50,7 @@ export default (props) =>
 
   C.Text
     className:
-      classNames(
+      clsx(
         prefixClass
         iconName
         className

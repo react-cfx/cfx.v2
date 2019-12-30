@@ -9,8 +9,10 @@ import data from './data'
 
 import CFX from '../../../utils/cfx'
 import CFS from '../../../utils/cfs'
+
 import styl from 'cfx.styl'
 import style from './index.cfs'
+
 import './index.cfs.css'
 
 C = CFX {

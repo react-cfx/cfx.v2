@@ -12,6 +12,7 @@ export default =>
     className=""
     key= ''
     onClick= ''
+    style=''
   >
     <Text className="">
       JSX for CFX

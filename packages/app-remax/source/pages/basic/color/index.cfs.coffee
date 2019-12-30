@@ -6,19 +6,19 @@ export default ({
     rgba
     calc
     color: c
+    per: p
   }
 }) =>
-  
+
   colorList:
     display: 'flex'
     justifyContent: 'flex-start'
     alignItems: 'flex-star'
     flexWrap: 'wrap'
 
-  
   colorItem:
     marginBottom: px 40
-    width: '33%'
+    width: p 33
     textAlign: 'center'
 
     circle:
@@ -30,23 +30,23 @@ export default ({
       width: px 150
       height: px 150
       background: c '78A4FA'
-      borderRadius: '50%'
+      borderRadius: p 50
     
       'inner-circle-1':
         position: 'absolute'
-        top: '50%'
-        left: '50%'
+        top: p 50
+        left: p 50
         marginLeft: px -50
         marginTop: px -50
         width: px 100
         height: px 100
         background: c 'fff'
-        borderRadius: '50%'
+        borderRadius: p 50
 
       'inner-circle-2':
         position: 'absolute'
-        top: '50%'
-        left: '50%'
+        top: p 50
+        left: p 50
         marginLeft: px -32
         marginTop: px -32
         width: px 64
@@ -56,9 +56,8 @@ export default ({
           'solid'
           '#78A4FA'
         ]
-        borderRadius: '50%'
-        opacity: '0.3'
-      
+        borderRadius: p 50
+        opacity: 0.3
     
     '&__info':
       marginTop: px 20

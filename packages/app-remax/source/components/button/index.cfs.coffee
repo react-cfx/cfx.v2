@@ -51,7 +51,7 @@ export default ({
     fontSize: (font {px}).size.lg
     lineHeight: px 90
     textAlign: 'center'
-    borderRadius: (border {px, p}).radius.md
+    borderRadius: (border {px, per: p}).radius.md
     border: js [
       px 1
       'solid'

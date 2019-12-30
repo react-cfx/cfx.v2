@@ -2,6 +2,7 @@ import React, {
   useState
   useEffect
 } from 'react'
+import clsx from 'clsx'
 
 import {
   View
@@ -11,10 +12,10 @@ import {
 import CFX from '../../../utils/cfx'
 import CFS from '../../../utils/cfs'
 
-import clsx from 'clsx'
 import styl from 'cfx.styl'
 import style from './index.cfs'
 import './index.cfs.css'
+
 import AtButton from '../../../components/button'
 
 C = CFX {
