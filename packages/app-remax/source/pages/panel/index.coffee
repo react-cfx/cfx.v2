@@ -109,25 +109,21 @@ export default (props) =>
       C.View
         className: S.componentList
       ,
-        itemList.reduce (r, c, i) =>
-          [
-            r...
-            C.View
-              className: 'component-list__item'
-              key: c.id
-              onClick: (e) => gotoComponent
-                id: c.id
-                parent: currentId
-              , e
-            ,
-              C.Text
-                className: 'name'
-              , "#{c.id} #{c.name}"
-              C.Text
-                className: clsx [
-                  'at-icon'
-                  'at-icon-chevron-right'
-                ]
-              , ''
-          ]
-        , []
+        itemList.map (i) =>
+          C.View
+            className: 'component-list__item'
+            key: i.id
+            onClick: (e) => gotoComponent
+              id: i.id
+              parent: currentId
+            , e
+          ,
+            C.Text
+              className: 'name'
+            , "#{i.id} #{i.name}"
+            C.Text
+              className: clsx [
+                'at-icon'
+                'at-icon-chevron-right'
+              ]
+            , ''
