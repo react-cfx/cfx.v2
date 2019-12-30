@@ -47,6 +47,7 @@ export default (props) =>
         C.View
           className: 'panel__title'
         , item.type
+
         C.View
           className: 'panel__content'
         ,
@@ -54,10 +55,12 @@ export default (props) =>
             className: S.colorList
           ,
             item.data.map (color) =>
+
               C.View
                 className: S.colorItem
                 key: color.hex
               ,
+
                 C.View
                   className: 'circle'
                   style:
