@@ -7,6 +7,7 @@ pages = [
 
   'pages/basic/color/index'
   'pages/basic/icon/index'
+  'pages/basic/typo/index'
   'pages/basic/button/index'
 
   'pages/_jsx_for_cfx/index'

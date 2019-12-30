@@ -1,4 +1,4 @@
-colorData = [
+export default [
     type: '主色'
     data: [
         name: '浅蓝色'
@@ -71,5 +71,3 @@ colorData = [
         hex: '#FAFBFC'
     ]
 ]
-
-export { colorData }

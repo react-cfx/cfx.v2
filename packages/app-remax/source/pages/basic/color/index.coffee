@@ -1,7 +1,3 @@
-import React, {
-  useState
-  useEffect
-} from 'react'
 import clsx from 'clsx'
 
 import {
@@ -16,7 +12,7 @@ import CFS from '../../../utils/cfs'
 
 import styl from 'cfx.styl'
 import style from './index.cfs'
-import { colorData } from './data'
+import colors from './colors'
 import './index.cfs.css'
 
 S = CFS {
@@ -42,7 +38,7 @@ export default =>
     C.View
       className: 'doc-body'
     ,
-      colorData.map (item) =>
+      colors.map (item) =>
 
         C.View
           className: 'panel'
