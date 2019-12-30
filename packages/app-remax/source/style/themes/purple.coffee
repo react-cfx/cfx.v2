@@ -3,8 +3,8 @@ color =
     default: '#345B8F'
     light: '#5274A0'
     dark: '#27497C'
-  success:: '#0C8'
-  error: #FA5B5B'
+  success: '#0C8'
+  error: '#FA5B5B'
   warning: '#FFD400'
   info: '#4D88FF'
 
