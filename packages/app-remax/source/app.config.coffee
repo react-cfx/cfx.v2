@@ -6,6 +6,7 @@ pages = [
   'pages/panel/index'
 
   'pages/basic/color/index'
+  'pages/basic/icon/index'
 
   'pages/_jsx_for_cfx/index'
 ]

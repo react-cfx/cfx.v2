@@ -2,6 +2,7 @@ import React, {
   useState
   useEffect
 } from 'react'
+import clsx from 'clsx'
 
 import {
   View
@@ -12,10 +13,10 @@ import {
 
 import CFX from '../../utils/cfx'
 import CFS from '../../utils/cfs'
-import clsx from 'clsx'
+
 import styl from 'cfx.styl'
 import style from './index.cfs'
-import classNames from 'classnames'
+
 import './index.cfs.css'
 
 S = CFS {
@@ -128,7 +129,7 @@ export default (props) =>
       onContact: onContact
   
   C.View
-    className: classNames rootClassName, classObject, props.className, typeButton
+    className: clsx rootClassName, classObject, props.className, typeButton
     style: customStyle
     onClick: onClick
   ,

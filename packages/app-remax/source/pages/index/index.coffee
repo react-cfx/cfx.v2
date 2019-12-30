@@ -1,4 +1,5 @@
 import { useShow } from 'remax'
+import clsx from 'clsx'
 
 import CFX from '../../utils/cfx'
 import CFS from '../../utils/cfs'
@@ -12,7 +13,6 @@ import {
   navigateTo
 } from 'remax/wechat'
 
-import clsx from 'clsx'
 import styl from 'cfx.styl'
 import style from './index.cfs'
 

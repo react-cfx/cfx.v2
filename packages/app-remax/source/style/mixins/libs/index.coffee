@@ -160,9 +160,9 @@ justifyContent = (
     then 'justify'
     else value
 
-flex = (
+flex = ({
   joinS: js
-) => (
+}) => (
   fg = 1
   fs = null
   fb = null
@@ -394,16 +394,18 @@ hairlineRightRelative = ({
 
 line = (num = 1) =>
   if num is 1
-  then 
+  then(
     overflow: 'hidden'
     textOverflow: 'ellipsis'
     whiteSpace: 'nowrap'
-  else
+  )
+  else(
     overflow: 'hidden'
     textOverflow: 'ellipsis'
     display: '-webkit-box'
     '-webkitLineClamp': num
     '-webkitBoxOrient': 'vertical'
+  )
 
 overlay = ({
   per: p
@@ -450,9 +452,9 @@ tint = (
   percent
 ) =>
   mix(
-    '#FFF'
     color
-    percent
+    '#FFF'
+    1 - percent
   )
   .hex()
 

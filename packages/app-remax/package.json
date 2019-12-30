@@ -20,7 +20,6 @@
     "ddeyes": "~0.2.26",
     "react": "~16.12.0",
     "rimraf": "~3.0.0",
-    "classnames": "~2.2.6",
     "remax": "~1.10.8"
   },
   "devDependencies": {

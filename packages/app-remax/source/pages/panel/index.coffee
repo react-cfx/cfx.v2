@@ -2,12 +2,12 @@ import React, {
   useState
   useEffect
 } from 'react'
+import clsx from 'clsx'
 
 import { useShow } from 'remax'
 import CFX from '../../utils/cfx'
 import CFS from '../../utils/cfs'
 
-import clsx from 'clsx'
 import styl from 'cfx.styl'
 import style from './index.cfs'
 

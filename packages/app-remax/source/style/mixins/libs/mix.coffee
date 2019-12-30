@@ -27,12 +27,11 @@ export default (color1, color2, percent) =>
     _percent
   )
 
+# export default (color, percent) =>
 
-export default (color, percent) =>
-
-  mix(
-    color
-    '#FFF'
-    1 - getPerscent percent
-  )
-  .hex()
+#   mix(
+#     color
+#     '#FFF'
+#     1 - getPerscent percent
+#   )
+#   .hex()

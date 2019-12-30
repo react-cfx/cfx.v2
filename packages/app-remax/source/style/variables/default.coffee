@@ -1,4 +1,4 @@
-import tint from '../mixins/libs/tint'
+import { tint } from '../mixins/libs'
 
 hd = 2 # 基本单位
 
@@ -60,7 +60,7 @@ color =
         light = '#ECF5FD'
         {
           light
-          lighter: tint colorBgLight, '50%'
+          lighter: tint light, '50%'
         }
     )...
     grey: '#F7F7F7'
@@ -73,10 +73,10 @@ color =
         base = '#C5D9E8'
         {
           base
-          pplit: tint colorBorderBase, '20%' # 分割线
-          light: tint colorBorderBase, '30%'
-          lighter: tint colorBorderBase, '50%'
-          lightest: tint colorBorderBase, '80%'
+          pplit: tint base, '20%' # 分割线
+          light: tint base, '30%'
+          lighter: tint base, '50%'
+          lightest: tint base, '80%'
         }
     )...
     grey: '#CCC'
