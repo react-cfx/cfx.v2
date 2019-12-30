@@ -1,10 +1,12 @@
 backgroundColor = '#323239'
 
 pages = [
-  'pages/basic/color/index'
-  'pages/test/index'
   'pages/index/index'
+
   'pages/panel/index'
+
+  'pages/basic/color/index'
+
   'pages/_jsx_for_cfx/index'
 ]
 
