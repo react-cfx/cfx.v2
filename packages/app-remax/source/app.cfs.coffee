@@ -60,7 +60,7 @@ export default ({
         'constant(safe-area-inset-bottom)'
         '+'
         px 60
-     ]
+      ]
       paddingBottom: calc [
         'env(safe-area-inset-bottom)'
         '+'
@@ -68,10 +68,10 @@ export default ({
       ]
 
       panel:
-        margin: js [
+        padding: js [
           px 32
           0
-          px 56
+          px 24
         ]
 
         '&__title':
@@ -83,29 +83,29 @@ export default ({
           fontWeight: 'bold'
           lineHeight: 1.5
 
-          '&::before':
-            content: '\" \"'
-            display: 'inline-block'
-            position: 'absolute'
-            left: px 24
-            top: p 50
-            marginTop: px -20
-            width: px 2
-            height: px 40
-            backgroundColor: '#6190e8'
-            boxShadow: js [
-              0
-              px 7
-              px 12
-              0
-              rgba [
-                97
-                144
-                232
-                0.2
-              ]
+        '&__title::before':
+          content: '\" \"'
+          display: 'inline-block'
+          position: 'absolute'
+          left: px 24
+          top: p 50
+          marginTop: px -20
+          width: '2PX'
+          height: px 40
+          backgroundColor: '#6190e8'
+          boxShadow: js [
+            0
+            px 7
+            px 12
+            0
+            rgba [
+              97
+              144
+              232
+              0.2
             ]
-            borderRadius: px 1
+          ]
+          borderRadius: px 1
 
         '&__content':
           padding: js [

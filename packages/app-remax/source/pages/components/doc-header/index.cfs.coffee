@@ -16,13 +16,13 @@ export default ({
       fontSize: px 40
       fontWeight: 'bold'
 
-      '&::after':
-        content: '\" \"'
-        position: 'absolute'
-        left: 0
-        bottom: 0
-        display: 'inline-block'
-        width: px 120
-        height: px 2
-        borderRadius: px 1
-        backgroundColor: '#6190E8'
+    '&__title::after':
+      content: '\" \"'
+      position: 'absolute'
+      left: 0
+      bottom: 0
+      display: 'inline-block'
+      width: px 120
+      height: '2PX'
+      borderRadius: '1PX'
+      backgroundColor: '#6190E8'

@@ -64,7 +64,6 @@ export default (props) =>
     setCurrentId id.toLowerCase()
 
   gotoComponent = (c, e) =>
-    console.log 'hello world'
     {
       id
       parent
