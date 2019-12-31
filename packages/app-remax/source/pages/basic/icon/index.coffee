@@ -1,7 +1,6 @@
-import React, {
-  useState
-  useEffect
-} from 'react'
+import clsx from 'clsx'
+
+import DocsHeader from '../../components/doc-header'
 
 import { View } from 'remax/wechat'
 import AtIcon from '../../../components/icon/index'
@@ -18,6 +17,7 @@ import './index.cfs.css'
 C = CFX {
   View
   AtIcon
+  DocsHeader
 }
 
 S = CFS {
@@ -25,16 +25,14 @@ S = CFS {
   style
 }
 
-iconColor = '#999'
-iconSize = 30
 
 export default (props) =>
 
   C.View
     className: 'page'
   ,
-    C.View
-    , 'ICON 图标'
+    C.DocsHeader
+      title: 'ICON 图标'
 
     C.View
       className: 'doc-body'
@@ -61,8 +59,6 @@ export default (props) =>
                 ,
                   C.AtIcon
                     value: icon
-                    color: iconColor
-                    size: iconSize
                 
                 C.View
                   className: 'icon-list__name'
