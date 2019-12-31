@@ -57,37 +57,33 @@ export default =>
     C.View
       className: 'module-list'
     ,
-      menuData.reduce (r, c, i) =>
-        [
-          r...
+      menuData.map (c, i) =>
+        C.View
+          className: 'module-list__item'
+          key: i
+          onClick: (e) => gotoPanel c, i, e
+        ,
           C.View
-            className: 'module-list__item'
-            key: i
-            onClick: (e) => gotoPanel c, i, e
+            className: 'module-list__icon'
+          ,
+            C.Image
+              className: 'img'
+              src: c.icon
+              mode: 'widthFix'
+          C.View
+            className: 'module-list__info'
           ,
             C.View
-              className: 'module-list__icon'
-            ,
-              C.Image
-                className: 'img'
-                src: c.icon
-                mode: 'widthFix'
+              className: 'title'
+            , c.title
             C.View
-              className: 'module-list__info'
-            ,
-              C.View
-                className: 'title'
-              , c.title
-              C.View
-                className: 'content'
-              , c.content
-            C.View
-              className: 'module-list__arrow'
-            ,
-              C.Text
-                className: clsx [
-                  'at-icon'
-                  'at-icon-chevron-right'
-                ]
-        ]
-      , []
+              className: 'content'
+            , c.content
+          C.View
+            className: 'module-list__arrow'
+          ,
+            C.Text
+              className: clsx [
+                'at-icon'
+                'at-icon-chevron-right'
+              ]

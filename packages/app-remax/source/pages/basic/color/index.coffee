@@ -1,18 +1,17 @@
-import clsx from 'clsx'
-
 import {
   View
-  Text
 } from 'remax/wechat'
 
-import DocsHeader from '../../components/doc-header'
+import DocPage from '../../components/doc-page'
+import DocPanel from '../../components/doc-panel'
+import Color from './components/color'
 
 import CFX from '../../../utils/cfx'
 import CFS from '../../../utils/cfs'
 
 import styl from 'cfx.styl'
 import style from './index.cfs'
-import colors from './colors'
+
 import './index.cfs.css'
 
 S = CFS {
@@ -22,66 +21,32 @@ S = CFS {
 
 C = CFX {
   View
-  Text
-  DocsHeader
+  Color
+  DocPage
+  DocPanel
 }
+
+import colors from './colors'
 
 export default =>
 
-  C.View
-    className: 'page'
+  title = 'Color 颜色' 
+
+  C.DocPage {
+    _k: title
+    title
+  }
   ,
-
-    C.DocsHeader
-      title: 'Color 颜色'
-  
-    C.View
-      className: 'doc-body'
-    ,
-      colors.map (item) =>
-
+    colors.map (item, i) =>
+      C.DocPanel
+        _k: item.type
+        title: item.type
+      ,
         C.View
-          className: 'panel'
-          key: item.type
+          className: S.colorList
         ,
-          C.View
-            className: 'panel__title'
-          , item.type
-
-          C.View
-            className: 'panel__content'
-          ,
-            C.View
-              className: S.colorList
-            ,
-              item.data.map (color) =>
-
-                C.View
-                  className: S.colorItem
-                  key: color.hex
-                ,
-
-                  C.View
-                    className: 'circle'
-                    style:
-                      background: color.hex
-                  ,
-                    C.View
-                      className: 'inner-circle-1'
-                    
-                    C.View
-                      className: 'inner-circle-2'
-                      style:
-                        borderColor: color.hex
-
-                  C.View
-                    className: 'color-item__info'
-                  ,
-                    C.Text
-                      className: 'name'
-                    , color.name
-
-                    C.Text
-                      className: 'hex'
-                      selectable: true
-                    , color.hex
+          item.data.map (color, _i) =>
+            C.Color {
+              _k: "#{i}_#{color.hex.replace '#', ''}_#{_i}"
+              color
+            }

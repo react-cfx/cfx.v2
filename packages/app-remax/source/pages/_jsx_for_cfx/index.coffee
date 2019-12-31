@@ -10,8 +10,8 @@ export default =>
 
   <View
     className=""
-    key= ''
-    onClick= ''
+    onClick=''
+    key=''
     style=''
   >
     <Text className="">
