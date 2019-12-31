@@ -88,6 +88,10 @@ target.render = =>
           position: 'relative'
           backgroundColor: '#f8f8f8'
 
+    pageThird3:
+      position: 'relative'
+      backgroundColor: '#f0f0f0'
+
   render = renderer.render style
   classes = renderer.getClasses()
 

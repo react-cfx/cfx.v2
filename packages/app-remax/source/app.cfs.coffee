@@ -1,7 +1,12 @@
 import icons from './style/components/icons'
 import { iconfont } from './style/components/fonts'
 
-export default
+export default ({
+  cfs: {
+    vh
+    color: c
+  }
+}) =>
 
   '@fonts': {
     iconfont
@@ -9,16 +14,16 @@ export default
 
   '@tags':
     page:
-      backgroundColor: '#f8f8f8'
+      backgroundColor: c 'f8'
 
       display: 'flex'
       flexDirection: 'column'
-      minHeight: '100vh'
+      minHeight: vh 100
 
       boxSizing: 'border-box'
 
     view:
-      boxSizing: 'boxder-box'
+      boxSizing: 'border-box'
 
   '@global': {
     icons...
