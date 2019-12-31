@@ -59,8 +59,6 @@ export default =>
             ,
               C.AtIcon
                 value: icon
-                color: iconColor
-                size: iconSize
             
             C.View
               className: 'icon-list__name'

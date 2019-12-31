@@ -4,6 +4,7 @@ export default ({
     per: p
   }
 }) =>
+
   iconList:
     display: 'flex'
     justfyContent: 'flex-start'
@@ -14,6 +15,10 @@ export default ({
       marginBottom: px 60
       width: p 33
       textAlign: 'center'
+  
+      atIcon:
+        color: '#999'
+        fontSize: '33PX'
     
     '&__name':
       marginTop: px 20
