@@ -45,71 +45,74 @@ export default () =>
       C.View
         className: S.btnItem
       ,
+
         C.AtButton
           type: 'primary'
           onClick: click
         , '主操作按钮'
-      C.View
-        className: S.btnItem
-      ,
-        C.AtButton
-          type: 'primary'
-          loading: true
-          onClick: click
-        , 'Loading'
-      C.View
-        className: S.btnItem
-      ,
-        C.AtButton
-          type: 'primary'
-          disabled: true
-          onClick: click
-        , '不可操作'
 
-    C.DocPanel
-      title: '小按钮'
-    ,
-      C.View
-        className: S.btnItem
-      ,
-        C.View
-          className: 'subitem'
-        ,
-          C.AtButton
-            type: 'primary'
-            size: 'small'
-            onClick: click
-          , '按钮'
-        C.View
-          className: 'subitem'
-        ,
-          C.AtButton
-            type: 'secondary'
-            size: 'small'
-            onClick: click
-          , '按钮'
+      # C.View
+      #   className: S.btnItem
+      # ,
+      #   C.AtButton
+      #     type: 'primary'
+      #     loading: true
+      #     onClick: click
+      #   , 'Loading'
 
-    C.DocPanel
-      title: '圆角按钮'
-    ,
-      C.View
-        className: S.btnItem
-      ,
-        C.View
-          className: 'subitem'
-        ,
-          C.AtButton
-            type: 'primary'
-            size: 'small'
-            circle: true
-            onClick: click
-          , '按钮'
-        C.View
-          className: 'subitem'
-        ,
-          C.AtButton
-            type: 'secondary'
-            size: 'small'
-            circle: true
-            onClick: click
-          , '按钮'
+      # C.View
+      #   className: S.btnItem
+      # ,
+      #   C.AtButton
+      #     type: 'primary'
+      #     disabled: true
+      #     onClick: click
+      #   , '不可操作'
+
+    # C.DocPanel
+    #   title: '小按钮'
+    # ,
+    #   C.View
+    #     className: S.btnItem
+    #   ,
+    #     C.View
+    #       className: 'subitem'
+    #     ,
+    #       C.AtButton
+    #         type: 'primary'
+    #         size: 'small'
+    #         onClick: click
+    #       , '按钮'
+    #     C.View
+    #       className: 'subitem'
+    #     ,
+    #       C.AtButton
+    #         type: 'secondary'
+    #         size: 'small'
+    #         onClick: click
+    #       , '按钮'
+
+    # C.DocPanel
+    #   title: '圆角按钮'
+    # ,
+    #   C.View
+    #     className: S.btnItem
+    #   ,
+    #     C.View
+    #       className: 'subitem'
+    #     ,
+    #       C.AtButton
+    #         type: 'primary'
+    #         size: 'small'
+    #         circle: true
+    #         onClick: click
+    #       , '按钮'
+    #     C.View
+    #       className: 'subitem'
+    #     ,
+    #       C.AtButton
+    #         type: 'secondary'
+    #         size: 'small'
+    #         circle: true
+    #         onClick: click
+    #       , '按钮'

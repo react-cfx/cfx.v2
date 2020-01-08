@@ -166,7 +166,7 @@ camelToSlash = (k) =>
       then [ last ka ]
       else []
     )...
-  ] 
+  ]
   .reduce (r, c, i, a) =>
     _c = msLower c
     return [ _c ] if i is 0
@@ -246,8 +246,22 @@ classKey = (cs) =>
     typeof cs isnt 'string'
   )
 
-  csa = groupByChars cs
-  return msSlash camelToSlash cs if csa.length is 1
+  _cs =
+    cs.split '-'
+    .map (t) =>
+      arr = groupByChars t
+      if ( arr.length is 2 ) and (
+        arr
+        .filter (_t) =>
+          _t.match /^[0-9]*$/
+        .length is 1
+      )
+      then arr.join '-'
+      else t
+    .join '-'
+
+  csa = groupByChars _cs
+  return msSlash camelToSlash _cs if csa.length is 1
 
   csa.reduce (r, c) =>
     [

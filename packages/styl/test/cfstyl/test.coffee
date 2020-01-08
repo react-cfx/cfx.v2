@@ -92,6 +92,28 @@ target.render = =>
       position: 'relative'
       backgroundColor: '#f0f0f0'
 
+      'page-forth--ab':
+        position: 'relative'
+        backgroundColor: '#f0f0f0'
+
+      'page-forth__cd':
+        position: 'relative'
+        backgroundColor: '#f0f0f0'
+
+      '&--ef':
+        position: 'relative'
+        backgroundColor: '#f0f0f0'
+
+        '&::after':
+          display: 'none'
+
+      '&__gh':
+        position: 'relative'
+        backgroundColor: '#f0f0f0'
+
+        '&::after':
+          display: 'none'
+
   render = renderer.render style
   classes = renderer.getClasses()
 

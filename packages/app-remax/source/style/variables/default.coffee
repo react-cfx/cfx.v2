@@ -5,11 +5,11 @@ hd = 2 # 基本单位
 export default ({
   px
   per: p
-  cubicBezier
+  cubicBezier = =>
 }) =>
 
   # The Color of O2Team Brand
-  color:
+  color =
     brand:
       default: '#6190E8'
       light: '#78A4F4'
@@ -181,9 +181,7 @@ export default ({
     toast: 1090
 
   # timing function
-  timing = ({
-    cubicBezier
-  }) =>
+  timing =
     func: cubicBezier [
       0.36
       0.66
@@ -345,3 +343,22 @@ export default ({
         0.265
         1.550
       ]
+
+  {
+    color    
+    border
+    opacity
+    font 
+    line
+    spacing
+    icon
+    zIndex
+    (
+      if cubicBezier?
+      then {
+        timing
+        ease
+      }
+      else {}
+    )...
+  }

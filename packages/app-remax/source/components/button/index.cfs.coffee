@@ -1,12 +1,14 @@
-import { 
-  spacing
-  font
-  color
-  border
-  line
-  opacity
-} from '../../style/variables/default'
+import getStylVariables from '../../style/variables/default'
 
+nopx = (pxStr) =>
+  arr = pxStr.split ''
+  Number.parseInt(
+    arr[0..(arr.length - 2)]
+    .join ''
+  )
+
+pxNOpx = (pxStr, act, {px, nopx}) =>
+  px act nopx pxStr
 
 export default ({
   cfs: {
@@ -19,6 +21,18 @@ export default ({
     color: c
   }
 }) =>
+
+  { 
+    spacing
+    font
+    color
+    border
+    line
+    opacity
+  } = getStylVariables {
+    px
+    per: p
+  }
 
   at = do =>
     brand = color.brand.default
@@ -33,7 +47,6 @@ export default ({
         secondary: brand
     bg: brand
 
-
   atButton: {
     position: 'relative'
     display: 'flex'
@@ -44,14 +57,21 @@ export default ({
     ]
     padding: js [
       0 
-      (spacing {px}).h.xl
+      spacing.h.xl
     ] 
     height: at.button.height.default
     color: color.text.base.default
-    fontSize: (font {px}).size.lg
-    lineHeight: at.button.height.default - 2
+    fontSize: font.size.lg
+    lineHeight: at.button.height.default
+      # pxNOpx at.button.height.default
+      # ,
+      #   (n) => n - 2
+      # , {
+      #   px
+      #   nopx
+      # }
     textAlign: 'center'
-    borderRadius: (border {px, per: p}).radius.md
+    borderRadius: border.radius.md
     border: js [
       px 1
       'solid'
@@ -60,7 +80,7 @@ export default ({
     boxSizing: 'border-box'
     # line...
 
-    '&:active':
+    ':active':
       opacity: opacity.active
     
     '&__icon':
@@ -73,7 +93,7 @@ export default ({
       ]
     '&__text':
       display: 'inline'
-    
+
     '&__wxbutton':
       position: 'absolute'
       padding: 0
@@ -89,7 +109,7 @@ export default ({
 
       '&::after':
         display: 'none'
-      
+
     '&--active':
       opacity: opacity.active
     
@@ -99,50 +119,72 @@ export default ({
       '&:active':
         opacity: opacity.disabled
 
-
-    '&--primary':
-      color: color.text.base.inverse
-      border: js [
-        px 1
-        'solid'
-        color.brand.default
-      ]
-      background: color.brand.default
-
-    '&--secondary':
-      color: color.brand.default
-      border: js [
-        px 1
-        'solid'
-        color.brand.default
-      ]
-      backgroundColor: color.white
-
-
-    '&--circle':
-      borderRadius: at.button.height.default / 2
-      backgroundClip: 'border-box'
-      overflow: 'hidden'
-
-    '&--small':
-      padding: js [
-        0 
-        (spacing {px}).h.md
-      ] 
-      width: 'auto'
-      minWidth: px 100
-      maxWidth: px 710
-      height: at.button.height.sm
-      fontSize: (font {px}).size.base
-      lineHeight: at.button.height.sm - 2
-
-    '&--small.at-button--circle': 
-      borderRadius: at.button.height.sm / 2
-
-    '&--full':
-      width: p 100
-      maxWidth: p 100
-      borderRadius: 0
-      borderLeft: 'none'
-      borderRight: 'none'
   }
+
+  # 'at-button--primary':
+  #   color: color.text.base.inverse
+  #   border: js [
+  #     '10PX'
+  #     'solid'
+  #     color.brand.default
+  #   ]
+  #   background: color.brand.default
+
+  # 'at-button--secondary':
+  #   color: color.brand.default
+  #   border: js [
+  #     '10PX'
+  #     'solid'
+  #     color.brand.default
+  #   ]
+  #   backgroundColor: color.white
+
+
+  # 'at-button--circle':
+  #   borderRadius:
+  #     pxNOpx at.button.height.default
+  #     ,
+  #       (n) => n / 2
+  #     , {
+  #       px
+  #       nopx
+  #     }
+  #   backgroundClip: 'border-box'
+  #   overflow: 'hidden'
+
+  # 'at-button--small':
+  #   padding: js [
+  #     0 
+  #     spacing.h.md
+  #   ] 
+  #   width: 'auto'
+  #   minWidth: px 100
+  #   maxWidth: px 710
+  #   height: at.button.height.sm
+  #   fontSize: font.size.base
+  #   lineHeight:
+  #     pxNOpx at.button.height.sm
+  #     ,
+  #       (n) => n - 2
+  #     , {
+  #       px
+  #       nopx
+  #     }
+
+  # 'at-button--small.at-button--circle': 
+  #   borderRadius:
+  #     pxNOpx at.button.height.sm
+  #     ,
+  #       (n) => n / 2
+  #     , {
+  #       px
+  #       nopx
+  #     }
+
+  # 'at-button--full':
+  #   width: p 100
+  #   maxWidth: p 100
+  #   borderRadius: 0
+  #   borderLeft: 'none'
+  #   borderRight: 'none'
+

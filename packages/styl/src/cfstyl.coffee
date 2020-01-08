@@ -112,6 +112,27 @@ recRenderer = (
   ]
 
 getClasses = (styles) =>
+
+  removeLastHash = (c) =>
+    arr = c.split '-'
+    arr
+    # arr[0..(arr.length - 2)]
+    .slice 0, arr.length - 1
+    .join '-'
+
+  splitByDubleSuffix = (c, splitSymbol) =>
+    unless splitSymbol
+      return
+        body: c
+        suffix: ''
+    arr = c.split splitSymbol
+    if arr.length isnt 2
+      return
+        body: c
+        suffix: ''
+    body: arr[0]
+    suffix: "#{splitSymbol}#{arr[1]}"
+
   (
     Object.keys styles
   )
@@ -121,13 +142,21 @@ getClasses = (styles) =>
       (
         if c.includes '-'
         then(
-          arr = c.split '-'
-          [(
-            slashToCamel(
-              arr[0..(arr.length - 2)]
-              .join '-'
-            )
-          )]: ".#{c}"
+          suffixSymbol = 
+            if c.includes '--'
+            then '--'
+            else if c.includes '__'
+            then '__'
+            else ''
+          {
+            body
+            suffix
+          } = splitByDubleSuffix(
+            removeLastHash c
+            suffixSymbol
+          )
+          ["#{slashToCamel body}#{suffix}"]: ".#{c}"
+          [removeLastHash c]: ".#{c}"
         )
         else [c]: c
       )...
@@ -185,6 +214,10 @@ Renderer = (cfstyls, plugins) =>
       pluginsCall plugins
       , 'classNames'
       , c.name
+
+    # dd {
+    #   classNames
+    # }
 
     {
       r...

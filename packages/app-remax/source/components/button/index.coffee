@@ -95,13 +95,16 @@ export default ({
   #     props.onReset e
   #   )
   
-  rootClassName = [ S.atButton ]
+  rootClassName = [
+    S.atButton
+  ]
 
   classObject =
-    ["at-button--#{SIZE_CLASS[size]}"]: SIZE_CLASS[size]
-    'at-button--disabled': disabled
-    'at-button--circle': circle
-    'at-button--full': full
+    [ S["at-button--#{SIZE_CLASS[size]}"] ]: SIZE_CLASS[size]
+    [ S['at-button--disabled'] ]: disabled
+    [ S["at-button--#{type}"] ]: TYPE_CLASS[type]
+    [ S['at-button--circle'] ]: circle
+    [ S['at-button--full'] ]: full
 
   # loadingColor = 
   #   if type is 'primary'

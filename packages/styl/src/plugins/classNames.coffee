@@ -1,6 +1,52 @@
 # import dd from 'ddeyes'
 import { last } from '../util'
 
+withoutHash = (str) =>
+  return str unless str.includes '-'
+  arr = str.split '-'
+  arr[0..arr.length - 2]
+  .join '-'
+
+checkClassNames = (klass, symbol, current) =>
+  arr = (
+    klass.split symbol
+  )
+  .filter (t) =>
+    if t is ''
+    then false
+    else true
+
+  if arr.length is 2
+  then(
+    # dd {
+    #   arr: arr[0]
+    #   current
+    #   bool: arr[0] is current
+    # }
+    arr[0] is current
+  )
+  else false
+
+getLastClass = (
+  classes
+  cb = (args...) => args[0] 
+) =>
+  return '' if classes is ''
+  arr = (
+    classes.split '.'
+  )
+  .filter (t) =>
+    if t is ''
+    then false
+    else true
+
+  cb (
+    if arr.length is 0
+    then ''
+    else ".#{arr[arr.length - 1]}"
+  )
+  , arr.length
+
 export default =>
 
   (classNames, actionPoint) =>
@@ -10,35 +56,75 @@ export default =>
     return unless actionPoint is 'classNames'
 
     classNames.reduce (r, c) =>
-      _lastClass = last r
-      lastClass = do =>
-        if r.length is 1
-          arr = _lastClass.split '-' 
-          if _lastClass.includes '-'
-            arr[0..arr.length - 2]
-            .join '-'
-        else _lastClass
-      [
-        r...
-        c.split ''
-        .reduce (_r, _c, _i)  =>
-          [
-            _r...
-            (
-              if _c is '&'
-              then [ lastClass ]
-              else(
-                if (
-                  _i is 0
-                ) and (
-                  _c is ':'
+
+      _lastClass =
+        if r.length >= 1 
+        then last r
+        else ''
+
+      lastClass = getLastClass _lastClass
+      , (klass, arrLength) =>
+        if ( arrLength is 1 ) and (
+          r.length is 1
+        )
+        then withoutHash klass
+        else klass
+
+      _c =
+        if c.includes '&'
+        then c.replace '&', lastClass
+        else c
+      _c = "#{lastClass}#{_c}" if (_c.split '')[0] is ':'
+
+      if (
+        _c.includes '--'
+      ) or (
+        _c.includes ':'
+      )
+      then [
+        (
+          if r.length is 1
+          then []
+          else r[0..r.length - 2]
+        )...
+        (
+          if (
+            checkClassNames _c, '--', lastClass
+          ) or (
+            checkClassNames _c, ':', lastClass
+          )
+          then(
+            [
+              if r.length is 1
+              then(
+                if(
+                  (
+                    _lastClass.split '.'
+                  )
+                  .filter (t) =>
+                    if t is ''
+                    then false
+                    else true
+                  .length >= 2
                 )
-                then [ "#{lastClass}#{_c}" ]
-                else [ _c ]
+                then(
+                  arr = _lastClass.split '.'
+                  ".#{
+                    arr[0..arr.length - 2]
+                    .join '.'
+                  }#{_c}"
+                )
+                else "#{_lastClass}#{_c}"
               )
-            )...
-          ]
-        , []
-        .join ''
+              else _c
+            ]
+          )
+          else [ "#{_lastClass}#{_c}" ]
+        )...
       ]
+      else [
+        r...
+        _c
+      ]
+
     , []
