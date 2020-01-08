@@ -7,6 +7,7 @@ import {
   opacity
 } from '../../style/variables/default'
 
+
 export default ({
   cfs: {
     px
@@ -18,22 +19,21 @@ export default ({
     color: c
   }
 }) =>
-  atButtonPrimary:
-    color: color.text.base.inverse
-    border: js [
-      px 1
-      'solid'
-      color.brand.default
-    ]
-    background: color.brand.default
-  atButtonSecondary: 
-    color: color.brand.default
-    border: js [
-      px 1
-      'solid'
-      color.brand.default
-    ]
-    backgroundColor: '#fff'
+
+  at = do =>
+    brand = color.brand.default
+    button:
+      height:
+        default: px 92
+        sm: px 60
+      color: brand
+    border:
+      color:
+        primary: brand
+        secondary: brand
+    bg: brand
+
+
   atButton: {
     position: 'relative'
     display: 'flex'
@@ -46,10 +46,10 @@ export default ({
       0 
       (spacing {px}).h.xl
     ] 
-    height: px 92
+    height: at.button.height.default
     color: color.text.base.default
     fontSize: (font {px}).size.lg
-    lineHeight: px 90
+    lineHeight: at.button.height.default - 2
     textAlign: 'center'
     borderRadius: (border {px, per: p}).radius.md
     border: js [
@@ -66,7 +66,7 @@ export default ({
     '&__icon':
       display: 'inline-block'
       margin: js [ 
-        px 2 
+        '2PX'
         px 20 
         0 
         px 20
@@ -99,8 +99,28 @@ export default ({
       '&:active':
         opacity: opacity.disabled
 
+
+    '&--primary':
+      color: color.text.base.inverse
+      border: js [
+        px 1
+        'solid'
+        color.brand.default
+      ]
+      background: color.brand.default
+
+    '&--secondary':
+      color: color.brand.default
+      border: js [
+        px 1
+        'solid'
+        color.brand.default
+      ]
+      backgroundColor: color.white
+
+
     '&--circle':
-      borderRadius: px (92 / 2)
+      borderRadius: at.button.height.default / 2
       backgroundClip: 'border-box'
       overflow: 'hidden'
 
@@ -112,11 +132,12 @@ export default ({
       width: 'auto'
       minWidth: px 100
       maxWidth: px 710
-      height: px 60
+      height: at.button.height.sm
       fontSize: (font {px}).size.base
-      lineHeight: px 58
-      '&.at-button--circle': 
-        borderRadius: px 30
+      lineHeight: at.button.height.sm - 2
+
+    '&--small.at-button--circle': 
+      borderRadius: at.button.height.sm / 2
 
     '&--full':
       width: p 100
