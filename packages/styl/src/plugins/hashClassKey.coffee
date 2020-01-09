@@ -24,7 +24,14 @@ export default =>
       _c = splitA _c, '--'
       _c = splitA _c, '__'
 
-      hashClassKey = "#{camelToSlash _c}-#{hash style[c]}"
+      hashKey =
+        (
+          hash style[c]
+        )
+        .replace '-', ''
+
+      hashClassKey = "#{camelToSlash _c}-#{hashKey}"
+
       {
         r...
         [hashClassKey]: style[c]

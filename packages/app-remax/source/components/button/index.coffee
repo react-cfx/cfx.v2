@@ -25,13 +25,15 @@ C = CFX {
   Form
 }
 
-SIZE_CLASS = 
-  normal: 'normal'
-  small: 'small'
+SIZE_CLASS = {
+  'normal'
+  'small'
+}
 
-TYPE_CLASS =
-  primary: 'primary'
-  secondary: 'secondary'
+TYPE_CLASS = {
+  'primary'
+  'secondary'
+}
 
 export default ({
   loading
@@ -40,7 +42,7 @@ export default ({
   full
 
   size = 'normal'
-  type = ''
+  type = 'primary'
 
   onClick
 
@@ -100,11 +102,11 @@ export default ({
   ]
 
   classObject =
-    [ S["at-button--#{SIZE_CLASS[size]}"] ]: SIZE_CLASS[size]
-    [ S['at-button--disabled'] ]: disabled
-    [ S["at-button--#{type}"] ]: TYPE_CLASS[type]
-    [ S['at-button--circle'] ]: circle
-    [ S['at-button--full'] ]: full
+    "at-button--#{SIZE_CLASS[size]}": SIZE_CLASS[size]
+    'at-button--disabled': disabled
+    "at-button--#{type}": TYPE_CLASS[type]
+    'at-button--circle': circle
+    'at-button--full': full
 
   # loadingColor = 
   #   if type is 'primary'
@@ -151,7 +153,7 @@ export default ({
   
   C.View
     className: clsx [
-      rootClassName
+      rootClassName...
       classObject
       className
     ]

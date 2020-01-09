@@ -114,6 +114,24 @@ target.render = =>
         '&::after':
           display: 'none'
 
+      '&__ij.&__kl':
+        display: 'none'
+
+      '&--ij.&--kl':
+        display: 'none'
+
+      '&--ij':
+        display: 'none'
+
+        '&__kl':
+          display: 'none'
+
+      '&--ij &__kl':
+        display: 'none'
+
+      '&__ij.&--kl':
+        display: 'none'
+
   render = renderer.render style
   classes = renderer.getClasses()
 

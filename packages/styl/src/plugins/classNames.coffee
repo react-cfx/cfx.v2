@@ -71,15 +71,27 @@ export default =>
         else klass
 
       _c =
-        if c.includes '&'
+        if (
+          c.split ''
+        )[0] is '&'
         then c.replace '&', lastClass
         else c
+      _c =
+        if _c.includes '&'
+        then _c.replace /.&/g, lastClass
+        else _c
       _c = "#{lastClass}#{_c}" if (_c.split '')[0] is ':'
 
+      arr = _c.split '.'
+      check_c =
+        if arr.length > 2
+        then ".#{arr[0..1].join ''}"
+        else _c
+
       if (
-        _c.includes '--'
+        check_c.includes '--'
       ) or (
-        _c.includes ':'
+        check_c.includes ':'
       )
       then [
         (
@@ -89,18 +101,17 @@ export default =>
         )...
         (
           if (
-            checkClassNames _c, '--', lastClass
+            checkClassNames check_c, '--', lastClass
           ) or (
-            checkClassNames _c, ':', lastClass
+            checkClassNames check_c, ':', lastClass
           )
           then(
             [
               if r.length is 1
               then(
+                arr = _lastClass.split '.'
                 if(
-                  (
-                    _lastClass.split '.'
-                  )
+                  arr
                   .filter (t) =>
                     if t is ''
                     then false
@@ -108,8 +119,7 @@ export default =>
                   .length >= 2
                 )
                 then(
-                  arr = _lastClass.split '.'
-                  ".#{
+                  "#{
                     arr[0..arr.length - 2]
                     .join '.'
                   }#{_c}"
@@ -119,7 +129,14 @@ export default =>
               else _c
             ]
           )
-          else [ "#{_lastClass}#{_c}" ]
+          else(
+            if _c.includes '__'
+            then [
+              _lastClass
+              _c
+            ]
+            else [ "#{_lastClass}#{_c}" ]
+          )
         )...
       ]
       else [

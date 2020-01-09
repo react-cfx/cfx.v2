@@ -68,7 +68,7 @@ export default =>
               C.View
                 className: clsx [
                   'col'
-                  S["h#{i}"]
+                  "h-#{i}"
                 ]
               , c.type
               C.View

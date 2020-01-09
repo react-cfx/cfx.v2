@@ -29,11 +29,11 @@ export default ({
       thead:
         display: 'inline-block'
 
-      'thead:nth-child(1)':
-        width: p 44
+        ':nth-child(1)':
+          width: p 44
 
-      'thead:nth-child(2)':
-        width: p 18
+        ':nth-child(2)':
+          width: p 18
 
     '&__body':
       marginTop: px 20
@@ -54,29 +54,29 @@ export default ({
       col:
         display: 'inline-block'
 
-      'col:nth-child(1)':
-        width: p 44
+        ':nth-child(1)':
+          width: p 44
 
-      'col:nth-child(2)':
-        width: p 18
+        ':nth-child(2)':
+          width: p 18
 
-    '&__line:nth-child(2n+1)':
-      backgroundColor: '#FAFBFC'
+      ':nth-child(2n+1)':
+        backgroundColor: '#FAFBFC'
 
-  h0:
-    fontSize: px 40
+      h0:
+        fontSize: px 40
 
-  h1:
-    fontSize: px 36
+      h1:
+        fontSize: px 36
 
-  h2:
-    fontSize: px 32
+      h2:
+        fontSize: px 32
 
-  h3:
-    fontSize: px 28
+      h3:
+        fontSize: px 28
 
-  h4:
-    fontSize: px 24
+      h4:
+        fontSize: px 24
 
-  h5:
-    fontSize: px 20
+      h5:
+        fontSize: px 20
