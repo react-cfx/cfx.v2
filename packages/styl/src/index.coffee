@@ -29,6 +29,7 @@ export default (_styles) =>
   cfsPlugins = [
     plugins.at._fonts()
     plugins.at._global()
+    plugins.at._keyframes()
     plugins.hashClassKey()
 
     plugins.selectorName()

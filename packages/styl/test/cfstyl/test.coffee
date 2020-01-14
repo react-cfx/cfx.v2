@@ -28,6 +28,7 @@ target.render = =>
   plugins = [
     _plugins.at._fonts()
     _plugins.at._global()
+    _plugins.at._keyframes()
     _plugins.hashClassKey()
 
     _plugins.selectorName()
@@ -57,6 +58,41 @@ target.render = =>
     '@global': {
       icons...
     }
+
+    '@keyframes':
+
+      loading:
+
+        '0%':
+          transform: 'rotate(0deg)'
+
+        '100%':
+          transform: 'rotate(360deg)'
+
+      fa3x:
+
+        '0%':
+          marginTop: '-15px'
+
+        '50%':
+          marginTop: '-5px'
+
+        '100%':
+          marginTop: '-15px'
+
+      fall:
+
+        from:
+          transform: 'rotate(0) translateX(0)'
+          opacity: 1
+
+        '50%,60%':
+          transform: 'rotate(90deg) translateX(0)'
+          opacity: 1
+
+        to:
+          transform: 'rotate(90deg) translateX(200px)'
+          opacity: 0
 
     page:
 

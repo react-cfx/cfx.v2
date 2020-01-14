@@ -66,7 +66,6 @@ export default () =>
       #   C.AtButton
       #     type: 'primary'
       #     disabled: true
-      #     onClick: click
       #   , '不可操作'
 
     # C.DocPanel
