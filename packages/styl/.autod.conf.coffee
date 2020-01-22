@@ -6,11 +6,11 @@ export default
   plugin: ''
   test: []
   dep: [
-    'ddeyes'
     'hash-sum'
   ]
   devdep: [
     'autod'
+    'ddeyes'
     'rimraf'
 
     'cfx.require-plugin-coffee'

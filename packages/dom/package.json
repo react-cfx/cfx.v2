@@ -18,7 +18,7 @@
     "rimraf": "^3.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "~7.7.7",
+    "@babel/runtime": "~7.8.3",
     "cfx.require-plugin-coffee": "~0.2.26",
     "ddeyes": "~0.2.26"
   }

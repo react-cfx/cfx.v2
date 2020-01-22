@@ -14,11 +14,15 @@ units = (arrUnit) =>
   rpx
   vh
   per
+  s
+  deg
 } = units [
   'px'
   'rpx'
   'vh'
   'per'
+  's'
+  'deg'
 ]
 per = unit '%'
 
@@ -75,6 +79,8 @@ scale = (n) => func 'scale', n
 scaleX = (n) => func 'scaleX', n
 scaleY = (n) => func 'scaleY', n
 
+rotate = (n) => func 'rotate', n
+
 rgba = (a) =>
   fujp 'rgba', a
 cubicBezier = (a) =>
@@ -97,6 +103,9 @@ export {
 
   per
 
+  s
+  deg
+
   color
 
   func
@@ -108,6 +117,8 @@ export {
   scale
   scaleX
   scaleY
+
+  rotate
 
   rgba
   cubicBezier

@@ -1,21 +1,27 @@
 export default ({
   cfs: {
-    jsonP: js
+    unit
+
     px
-    PX
     deg
     rotate
     s
+    per: p
+
+    joinS: js
+
     cubicBezier
   }
 }) =>
 
+  PX = unit 'PX'
+
   at =
     loading:
       size: px 36
-      color: color.width
+      color: '#FFF' # color.white
 
-  @keyframes:
+  '@keyframes':
 
     loading:
 
